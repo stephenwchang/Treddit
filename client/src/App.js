@@ -10,21 +10,31 @@ const r = new snoowrap({
   refreshToken: '7881048-46rszR3pc4SbpMnJzgqsYLu5J6c'
 });
 
+
 class App extends Component {
   state = {
     posts: []
   }
 
-  componentDidMount() {
-    r.getHot().then(result => {
-      this.setState({ posts: result })
+  renderComments = id => {
+    r.getSubmission(id).comments.then(result => {
+      console.log(id, result);
     });
+  }
+
+
+  componentDidMount = () => {
+    r.getHot().then(result => {
+      this.setState({ posts: result }) //
+      console.log(this.state.posts)
+    });
+
   }
 
   render() {
     return (
       <div>
-        <Posts posts={this.state.posts} />
+        <Posts posts={this.state.posts} renderComments={this.renderComments}/>
       </div>
     );
   }
