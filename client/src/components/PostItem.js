@@ -23,7 +23,7 @@ export default function SimpleExpansionPanel(props) {
     const classes = useStyles();
     return (
 
-      <ExpansionPanel>
+      <ExpansionPanel TransitionProps={{ unmountOnExit: true }} >
         <ExpansionPanelSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -32,8 +32,9 @@ export default function SimpleExpansionPanel(props) {
           <Typography className={classes.heading}>{props.title}</Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-          <Typography>
-          <Comments />
+          <Typography component={'span'} variant={'body2'}>
+
+          <Comments id={props.id} />
 
           </Typography>
         </ExpansionPanelDetails>
