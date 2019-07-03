@@ -1,22 +1,46 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { makeStyles } from '@material-ui/core/styles';
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
 import Comments from './Comments';
 
-export class PostItem extends Component {
-  render() {
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: '100%',
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(15),
+    fontWeight: theme.typography.fontWeightRegular,
+  },
+}));
 
+export default function SimpleExpansionPanel(props) {
+
+    const classes = useStyles();
     return (
-      <div style={postStyle} onClick={this.props.renderComments.bind(this, this.props.id)}>
-        {this.props.title}
-        <Comments />
-      </div>
+
+      <ExpansionPanel>
+        <ExpansionPanelSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Typography className={classes.heading}>{props.title}</Typography>
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
+          <Typography>
+          <Comments />
+
+          </Typography>
+        </ExpansionPanelDetails>
+      </ExpansionPanel>
+
+      // <div style={postStyle} onClick={this.props.renderComments.bind(this, this.props.id, this.state.toggled)}>
+      //   {this.props.title}
+      // </div>
     )
   }
-}
-
-const postStyle = {
-  border: '1px solid',
-  borderRadius: '5px',
-  margin: '5px',
-  padding: '5px'
-}
-export default PostItem;

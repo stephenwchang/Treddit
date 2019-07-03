@@ -13,19 +13,21 @@ const r = new snoowrap({
 
 class App extends Component {
   state = {
-    posts: []
+    posts: [],
+    comments: []
   }
 
-  renderComments = id => {
-    r.getSubmission(id).comments.then(result => {
-      console.log(id, result);
-    });
+  renderComments = (id) => {
+      r.getSubmission(id).comments.then(result => {
+        this.setState({ comments: result })
+        console.log(this.state.comments)
+      });
   }
 
 
   componentDidMount = () => {
     r.getHot().then(result => {
-      this.setState({ posts: result }) //
+      this.setState({ posts: Array.from(result) }) // temporary fix due to returned proxy object from snoowrap
       console.log(this.state.posts)
     });
 
