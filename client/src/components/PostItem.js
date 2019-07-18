@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 import Comments from './Comments';
+import Thumbnail from './Thumbnail';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -29,7 +30,10 @@ export default function SimpleExpansionPanel(props) {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography className={classes.heading}>{props.title}</Typography>
+          <Typography className={classes.heading}>
+            <Thumbnail thumbnail={props.thumbnail}/>
+            {props.title}
+          </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography component={'span'} variant={'body2'}>
