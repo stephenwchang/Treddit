@@ -15,6 +15,7 @@ export class CommentItem extends Component {
       return (
         <div>
           <div className='commentItem' style={{marginLeft: `${((this.props.depth) * 20).toString()}px` }}>
+            <div style={authorStyle}>{this.props.authorName}</div>
             <p dangerouslySetInnerHTML={{ __html: this.props.bodyHtml }}>
             </p>
           </div>
@@ -26,6 +27,8 @@ export class CommentItem extends Component {
   }
 }
 
-// const commentItemStyle =
-// }
+const authorStyle = {
+  color: "blue"
+}
+
 export default CommentItem;
