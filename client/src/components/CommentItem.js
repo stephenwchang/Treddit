@@ -38,13 +38,12 @@ export default function CommentItem(props) {
       id="panel1a-header"
     >
       <Typography className={classes.heading}>
-      <p dangerouslySetInnerHTML={{ __html: props.bodyHtml }}>
-      </p>
+        <p dangerouslySetInnerHTML={{ __html: props.bodyHtml }}>
+        </p>
       </Typography>
     </ExpansionPanelSummary>
     <ExpansionPanelDetails>
       <Typography component={'span'} variant={'body2'}>
-
         {renderReplies()}
       </Typography>
     </ExpansionPanelDetails>
