@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -22,14 +22,12 @@ const useStyles = makeStyles(theme => ({
 export default function SimpleExpansionPanel(props) {
 
     const classes = useStyles();
-    const [expansionPanelOpen, setExpansionPanelOpen] = useState(false);
+
     return (
 
-      <ExpansionPanel expanded={expansionPanelOpen} TransitionProps={{ unmountOnExit: true }} >
+      <ExpansionPanel TransitionProps={{ unmountOnExit: true }} >
         <ExpansionPanelSummary
-          expandIcon={<ExpandMoreIcon onClick={() => {
-            setExpansionPanelOpen(!expansionPanelOpen)
-          }}/>}
+          expandIcon={<ExpandMoreIcon/>}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
