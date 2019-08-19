@@ -31,7 +31,7 @@ export default function CommentItem(props) {
   const classes = useStyles();
 
   // expand only up to a depth of 5 comments by default
-  const expanded = props.replies[0] ? true : false;
+  const expanded = props.replies[0] ? props.depth < 6 ? true : props.depth > 6 ? true : false : false;
   const iconRender = props.replies[0] ? <ExpandMoreIcon/> : null;
 
 
