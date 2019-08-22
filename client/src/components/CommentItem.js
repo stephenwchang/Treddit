@@ -43,6 +43,7 @@ export default function CommentItem(props) {
         id="panel1a-header"
       >
         <Typography className={classes.heading}>
+          <div>{props.authorName}</div>
           <p dangerouslySetInnerHTML={{ __html: props.bodyHtml }}>
           </p>
         </Typography>
