@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -28,15 +28,23 @@ export default function CommentItem(props) {
       ));
     }
   }
+
   const classes = useStyles();
 
   // expand only up to a depth of 5 comments by default
   const expanded = props.replies[0] ? props.depth < 6 ? true : props.depth > 6 ? true : false : false;
-  const iconRender = props.replies[0] ? <ExpandMoreIcon/> : null;
+  // manually control and set expansion state
+  const [expansionPanelOpen, setExpansionPanelOpen] = useState(expanded);
+  // render icon only if expandable/collapsible
+  const iconRender = props.replies[0] ?
+    <ExpandMoreIcon onClick={() => {
+      setExpansionPanelOpen(!expansionPanelOpen)
+    }}/>
+    : null;
 
 
   return (
-    <ExpansionPanel defaultExpanded={expanded}>
+    <ExpansionPanel defaultExpanded={expanded} expanded={expansionPanelOpen} TransitionProps={{ unmountOnExit: true }}>
       <ExpansionPanelSummary
         expandIcon={iconRender}
         aria-controls="panel1a-content"
