@@ -54,3 +54,12 @@ blockquote p {
     transform: rotate(360deg);
   }
 }
+
+.MuiButtonBase-root {
+  user-select: text!important;
+  cursor: auto!important;
+}
+
+.MuiSvgIcon-root {
+  cursor: pointer;
+}
