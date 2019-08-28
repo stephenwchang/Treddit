@@ -55,6 +55,7 @@ blockquote p {
   }
 }
 
+/* bypass pointer only on full element */
 .MuiButtonBase-root {
   user-select: text!important;
   cursor: auto!important;
@@ -63,3 +64,12 @@ blockquote p {
 .MuiSvgIcon-root {
   cursor: pointer;
 }
+
+/* set proper padding between comments */
+.MuiExpansionPanelDetails-root {
+  padding: 0px 5px 15px 24px!important;
+}
+
+/* .MuiExpansionPanelSummary-root {
+  padding: 0px 5px 15px 24px!important;
+} */
