@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
 
 
 export default function CommentItem(props) {
-  // recursively generate comments until no more replies exist
+  // recursively generate comments until end of replies
 
   const renderReplies = () => {
     if (props.replies[0]) {
