@@ -38,7 +38,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='posts'>
         <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} />
       </div>
     );
