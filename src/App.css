@@ -73,3 +73,7 @@ blockquote p {
 /* .MuiExpansionPanelSummary-root {
   padding: 0px 5px 15px 24px!important;
 } */
+
+.commentAuthor {
+  color: grey;
+}
