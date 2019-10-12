@@ -36,7 +36,7 @@ export default function SimpleExpansionPanel(props) {
           id="panel1a-header"
         >
           <Typography className={classes.heading}>
-            <Thumbnail thumbnail={props.thumbnail}/>
+            <Thumbnail thumbnail={props.thumbnail} url={props.url}/>
             {props.title}
           </Typography>
         </ExpansionPanelSummary>
