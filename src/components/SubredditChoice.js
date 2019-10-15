@@ -69,7 +69,8 @@ const useStyles = makeStyles(theme => ({
     flexWrap: 'wrap',
   },
   margin: {
-    margin: theme.spacing(1),
+    marginBottom: '10px',
+    marginRight: '10px'
   },
   textField: {
     flexBasis: 200,
@@ -81,25 +82,7 @@ export default function SubredditChoice(props) {
 
 
   const classes = useStyles();
-  const [values, setValues] = React.useState({
-    amount: '',
-    password: '',
-    weight: '',
-    weightRange: '',
-    showPassword: false,
-  });
 
-  // const handleChange = prop => event => {
-  //   setValues({ ...values, [prop]: event.target.value });
-  // };
-
-  const handleClickShowPassword = () => {
-    setValues({ ...values, showPassword: !values.showPassword });
-  };
-
-  const handleMouseDownPassword = event => {
-    event.preventDefault();
-  };
 
   return (
     <div className={classes.root}>

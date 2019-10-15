@@ -58,9 +58,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className='posts'>
-        <SubredditChoice handleChange={this.handleChange} handleEnter={this.handleEnter} currentSub={this.state.subreddit} />
-        <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} />
+      <div>
+        <div className='posts'>
+          <SubredditChoice handleChange={this.handleChange} handleEnter={this.handleEnter} currentSub={this.state.subreddit} />
+          <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} />
+        </div>
       </div>
     );
   }
