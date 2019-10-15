@@ -81,3 +81,9 @@ blockquote p {
 .posts {
   padding: 1rem 10rem;
 }
+
+@media only screen and (max-width: 768px) {
+  .posts {
+    padding: 10px 10px;
+  }
+}
