@@ -90,7 +90,7 @@ export default function SubredditChoice(props) {
         id="outlined-simple-start-adornment"
         className={clsx(classes.margin, classes.textField)}
         variant="outlined"
-        label="Enter a Subreddit!"
+        label="Enter a subreddit!"
         onKeyDown={props.handleEnter}
         InputProps={{
           startAdornment: <InputAdornment position="start"></InputAdornment>,
