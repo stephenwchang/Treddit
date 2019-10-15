@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Posts from './components/Posts';
+import SubredditChoice from './components/SubredditChoice';
 import snoowrap from 'snoowrap';
 import './App.css';
 
@@ -14,22 +15,23 @@ const r = new snoowrap(credentials);
 
 // temporary credentials - to find a way to implement reddit log-in capabilities
 
+let userChoice;
+let subreddit = userChoice || ''; //subreddit will default to frontpage if not selected by user
 
 class App extends Component {
   state = {
     posts: []
   }
-
   // renderComments = (id) => {
   //     // r.getSubmission(id).comments.then(result => {
-  //     //   this.setState({ comments: result })
+  //     //   this.ssetState({ comments: result })
   //       console.log(this.state.comments)
   //     // });
   // }
 
 
   componentDidMount = () => {
-    r.getHot().then(result => {
+    r.getHot(subreddit).then(result => {
       this.setState({ posts: Array.from(result) }) // temporary fix due to returned proxy object from snoowrap
       console.log(this.state.posts)
     });
@@ -39,6 +41,7 @@ class App extends Component {
   render() {
     return (
       <div className='posts'>
+        <SubredditChoice />
         <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} />
       </div>
     );

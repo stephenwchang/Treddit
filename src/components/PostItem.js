@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function SimpleExpansionPanel(props) {
+export default function PostItem(props) {
 
     const classes = useStyles();
     const [expansionPanelOpen, setExpansionPanelOpen] = useState(false);
