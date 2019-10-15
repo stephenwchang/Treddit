@@ -15,13 +15,28 @@ const r = new snoowrap(credentials);
 
 // temporary credentials - to find a way to implement reddit log-in capabilities
 
-let userChoice;
-let subreddit = userChoice || ''; //subreddit will default to frontpage if not selected by user
+
 
 class App extends Component {
+
   state = {
-    posts: []
+    posts: [],
+    subreddit: 'All' //subreddit will default to frontpage if not selected by user
   }
+
+  loadPosts = (sub) => {
+    r.getHot(sub).then(result => {
+      this.setState({ posts: Array.from(result) }) // temporary fix due to returned proxy object from snoowrap
+      console.log(this.state.posts)
+    });
+
+  }
+
+  handleChange = event => {
+    this.setState({ subreddit: event.target.value });
+    this.loadPosts(event.target.value);
+  };
+
   // renderComments = (id) => {
   //     // r.getSubmission(id).comments.then(result => {
   //     //   this.ssetState({ comments: result })
@@ -31,17 +46,13 @@ class App extends Component {
 
 
   componentDidMount = () => {
-    r.getHot(subreddit).then(result => {
-      this.setState({ posts: Array.from(result) }) // temporary fix due to returned proxy object from snoowrap
-      console.log(this.state.posts)
-    });
-
+    this.loadPosts(this.state.subreddit);
   }
 
   render() {
     return (
       <div className='posts'>
-        <SubredditChoice />
+        <SubredditChoice handleChange={this.handleChange} currentSub={this.state.subreddit} />
         <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} />
       </div>
     );
