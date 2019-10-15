@@ -37,6 +37,13 @@ class App extends Component {
     this.loadPosts(event.target.value);
   };
 
+  handleEnter = event => {
+    if (event.key === 'Enter') {
+      this.setState({ subreddit: event.target.value });
+      this.loadPosts(event.target.value);
+    }
+  }
+
   // renderComments = (id) => {
   //     // r.getSubmission(id).comments.then(result => {
   //     //   this.ssetState({ comments: result })
@@ -52,7 +59,7 @@ class App extends Component {
   render() {
     return (
       <div className='posts'>
-        <SubredditChoice handleChange={this.handleChange} currentSub={this.state.subreddit} />
+        <SubredditChoice handleChange={this.handleChange} handleEnter={this.handleEnter} currentSub={this.state.subreddit} />
         <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} />
       </div>
     );

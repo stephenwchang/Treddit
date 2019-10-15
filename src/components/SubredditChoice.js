@@ -103,15 +103,16 @@ export default function SubredditChoice(props) {
 
   return (
     <div className={classes.root}>
-      {/* <TextField
+      <TextField
         id="outlined-simple-start-adornment"
         className={clsx(classes.margin, classes.textField)}
         variant="outlined"
         label="Enter a Subreddit!"
+        onKeyDown={props.handleEnter}
         InputProps={{
           startAdornment: <InputAdornment position="start"></InputAdornment>,
         }}
-      /> */}
+      />
       <TextField
         select
         className={clsx(classes.margin, classes.textField)}
