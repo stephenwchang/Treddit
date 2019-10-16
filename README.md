@@ -1,7 +1,7 @@
 # Treddit
 https://tredditor.herokuapp.com/
 
-Reddit web application
+Reddit React Web Application
 
 
 Features: 
