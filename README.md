@@ -1,7 +1,7 @@
 # Treddit
 https://tredditor.herokuapp.com/
 
-React Reddit application
+Reddit web application that allows comments to be viewed directly from the main feed
 
 
 Features: 
