@@ -37,7 +37,7 @@ export default function PostItem(props) {
         >
           <Typography className={classes.heading}>
             <Thumbnail thumbnail={props.thumbnail} url={props.url}/>
-            {props.title}
+            <a className='postTitleURL' href={props.url} target='_blank' rel='noopener noreferrer'>{props.title}</a>
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>

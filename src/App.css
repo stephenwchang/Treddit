@@ -82,6 +82,15 @@ blockquote p {
   padding: 1rem 10rem;
 }
 
+.postTitleURL:link {
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.postTitleURL:hover {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 768px) {
   .posts {
     padding: 10px 10px;
