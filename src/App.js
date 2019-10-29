@@ -35,7 +35,7 @@ class App extends Component {
   handleChange = event => {
     this.setState({ subreddit: event.target.value });
     this.loadPosts(event.target.value);
-  };
+  }
 
   handleEnter = event => {
     if (event.key === 'Enter') {
@@ -43,6 +43,16 @@ class App extends Component {
       this.loadPosts(event.target.value);
     }
   }
+
+  loadMore = () => {
+    let listingAmount = this.state.posts.length;
+    r.getHot(this.state.subreddit, {limit: listingAmount}).then(myListing => {
+      myListing.fetchMore({amount: 25}).then(extendedListing => {
+        this.setState({ posts: extendedListing });
+      })
+    });
+  }
+
 
   // renderComments = (id) => {
   //     // r.getSubmission(id).comments.then(result => {
@@ -60,6 +70,7 @@ class App extends Component {
     return (
       <div>
         <div className='posts'>
+          <button onClick={this.loadMore}>load more posts</button>
           <SubredditChoice handleChange={this.handleChange} handleEnter={this.handleEnter} currentSub={this.state.subreddit} />
           <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} />
         </div>
