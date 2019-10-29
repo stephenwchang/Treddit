@@ -96,3 +96,7 @@ blockquote p {
     padding: 10px 10px;
   }
 }
+
+.loader {
+  margin-top: .5rem;
+}
