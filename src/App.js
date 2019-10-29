@@ -3,6 +3,7 @@ import Posts from './components/Posts';
 import SubredditChoice from './components/SubredditChoice';
 import snoowrap from 'snoowrap';
 import './App.css';
+import InfiniteScroll from 'react-infinite-scroller';
 
 let credentials = {
   userAgent: 'Treddit 1.0 by Stephen Chang',
@@ -45,6 +46,7 @@ class App extends Component {
   }
 
   loadMore = () => {
+    console.log('infinite scroll activated')
     let listingAmount = this.state.posts.length;
     r.getHot(this.state.subreddit, {limit: listingAmount}).then(myListing => {
       myListing.fetchMore({amount: 25}).then(extendedListing => {
@@ -67,14 +69,22 @@ class App extends Component {
   }
 
   render() {
+    const loader = <div className='loader'>Loading more posts...</div>
     return (
-      <div>
+
         <div className='posts'>
-          <button onClick={this.loadMore}>load more posts</button>
-          <SubredditChoice handleChange={this.handleChange} handleEnter={this.handleEnter} currentSub={this.state.subreddit} />
-          <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} />
+          <InfiniteScroll
+            pageStart={0}
+            loadMore={this.loadMore}
+            hasMore={true}
+            loader={loader}
+          >
+            <SubredditChoice handleChange={this.handleChange} handleEnter={this.handleEnter} currentSub={this.state.subreddit} />
+            <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} />
+          </InfiniteScroll>
+
         </div>
-      </div>
+
     );
   }
 }

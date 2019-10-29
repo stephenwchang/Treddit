@@ -7,6 +7,7 @@
     "@material-ui/icons": "^4.2.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-infinite-scroller": "^1.2.4",
     "react-scripts": "3.0.1",
     "snoowrap": "^1.17.0"
   },
