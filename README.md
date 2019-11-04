@@ -3,6 +3,7 @@ https://tredditor.herokuapp.com/
 
 Reddit React Web Application
 
+<img src="demo/ExpandCollapse.gif" alt="expand/collapse" width="600"/>
 
 Features: 
   - Comments drop down and expand from main feed
