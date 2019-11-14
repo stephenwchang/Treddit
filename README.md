@@ -7,7 +7,7 @@ Reddit React Web Application
 
 Features: 
   - Comments drop down and expand from main feed
-  - Collapsable and expandable comments
+  - Collapsible and expandable comments
   - Subreddit selection and search
   - Infinite scroll capability
 
