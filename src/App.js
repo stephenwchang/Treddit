@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Posts from './components/Posts';
+import PopoverHint from './components/PopoverHint'
 import SubredditChoice from './components/SubredditChoice';
 import snoowrap from 'snoowrap';
 import './App.css';
@@ -71,7 +72,6 @@ class App extends Component {
   render() {
     const loader = <div className='loader'>Loading posts...</div>
     return (
-
         <div className='posts'>
           <InfiniteScroll
             pageStart={0}
@@ -80,6 +80,7 @@ class App extends Component {
             loader={loader}
           >
             <SubredditChoice handleChange={this.handleChange} handleEnter={this.handleEnter} currentSub={this.state.subreddit} />
+            <PopoverHint/>
             <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} />
           </InfiniteScroll>
 

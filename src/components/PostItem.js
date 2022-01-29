@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
-import { makeStyles, withStyles, styled } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Tooltip from '@material-ui/core/Tooltip';
-
-
 import Comments from './Comments';
 import Thumbnail from './Thumbnail';
+import PopoverHint from './PopoverHint'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -34,16 +33,16 @@ export default function PostItem(props) {
     const classes = useStyles();
     const [expansionPanelOpen, setExpansionPanelOpen] = useState(false);
 
-
     return (
-
       <ExpansionPanel expanded={expansionPanelOpen} TransitionProps={{ unmountOnExit: true }}>
         <IconLeftExpansionPanelSummary
           expandIcon={
             <Tooltip title={expansionPanelOpen ? "Collapse comment section" : "Expand comment section"}>
-              <ExpandMoreIcon onClick={() => {
-                setExpansionPanelOpen(!expansionPanelOpen)
-                }}/>
+              <ExpandMoreIcon
+                onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
+              >
+                <PopoverHint/>
+              </ExpandMoreIcon>
               </Tooltip>
           }
           aria-controls="panel1a-content"
@@ -58,11 +57,7 @@ export default function PostItem(props) {
 
         <ExpansionPanelDetails>
           <Typography component={'span'} variant={'body2'}>
-
           <Comments id={props.id} />
-          {/* workaround (just to notify user because of delayed comments loading) until creating conditional loading statement, possibly based off state or comments mounting */}
-          {/* <div> Loading comments... </div> */}
-
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>
