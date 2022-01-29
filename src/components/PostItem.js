@@ -29,7 +29,6 @@ const IconLeftExpansionPanelSummary = withStyles({
 })(ExpansionPanelSummary);
 
 
-
 export default function PostItem(props) {
 
     const classes = useStyles();
@@ -61,6 +60,8 @@ export default function PostItem(props) {
           <Typography component={'span'} variant={'body2'}>
 
           <Comments id={props.id} />
+          {/* workaround (just to notify user because of delayed comments loading) until creating conditional loading statement, possibly based off state or comments mounting */}
+          {/* <div> Loading comments... </div> */}
 
           </Typography>
         </ExpansionPanelDetails>

@@ -69,7 +69,7 @@ class App extends Component {
   }
 
   render() {
-    const loader = <div className='loader'>Loading more posts...</div>
+    const loader = <div className='loader'>Loading posts...</div>
     return (
 
         <div className='posts'>
