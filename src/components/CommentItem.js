@@ -5,6 +5,8 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Tooltip from '@material-ui/core/Tooltip';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -15,7 +17,6 @@ const useStyles = makeStyles(theme => ({
     fontWeight: theme.typography.fontWeightRegular,
   },
 }));
-
 
 
 export default function CommentItem(props) {
@@ -37,9 +38,11 @@ export default function CommentItem(props) {
   const [expansionPanelOpen, setExpansionPanelOpen] = useState(expanded);
   // render icon only if expandable/collapsible
   const iconRender = props.replies[0] ?
+  <Tooltip title={expansionPanelOpen ? "Collapse comment thread" : "Expand comment thread"}>
     <ExpandMoreIcon onClick={() => {
       setExpansionPanelOpen(!expansionPanelOpen)
     }}/>
+  </Tooltip>
     : null;
 
 
