@@ -9,6 +9,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Comments from './Comments';
 import Thumbnail from './Thumbnail';
 import PopoverHint from './PopoverHint'
+import SelfText from './SelfText'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -52,12 +53,14 @@ export default function PostItem(props) {
           <Typography className={classes.heading}>
             <Thumbnail thumbnail={props.thumbnail} url={props.url}/>
             <a className='postTitleURL' href={props.url} target='_blank' rel='noopener noreferrer'>{props.title}</a>
+            <div>{props.author + " " + props.subreddit}</div>
           </Typography>
         </IconLeftExpansionPanelSummary>
 
         <ExpansionPanelDetails>
           <Typography component={'span'} variant={'body2'}>
-          <Comments id={props.id} />
+          <SelfText selftext={props.selftext}/>
+          <Comments id={props.id}/>
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>

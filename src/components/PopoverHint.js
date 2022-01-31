@@ -35,7 +35,7 @@ export default function SimplePopover() {
           horizontal: "center"
         }}
       >
-        <Typography>Click to expand comments section</Typography>
+        <Typography>Click on arrow to expand comments</Typography>
       </Popover>
     </div>
   );
