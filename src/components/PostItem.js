@@ -53,7 +53,7 @@ export default function PostItem(props) {
           <Typography className={classes.heading}>
             <Thumbnail thumbnail={props.thumbnail} url={props.url}/>
             <a className='postTitleURL' href={props.url} target='_blank' rel='noopener noreferrer'>{props.title}</a>
-            <div>{props.subreddit}</div>
+            <div className='postSubreddit'>{props.subreddit}</div>
           </Typography>
         </IconLeftExpansionPanelSummary>
 

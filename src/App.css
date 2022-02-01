@@ -78,6 +78,10 @@ blockquote p {
   color: grey;
 }
 
+.postSubreddit {
+  color: grey;
+}
+
 .posts {
   padding: 1rem 10rem;
 }
