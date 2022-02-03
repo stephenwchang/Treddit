@@ -36,7 +36,7 @@ export class Comments extends Component {
       ));
     }
     else {
-      return <div> Loading comments...</div>
+      return <div className='loadingComments'> Loading comments...</div>
     }
   }
 }

@@ -25,9 +25,9 @@ const useStyles = makeStyles(theme => ({
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
   },
-  panel: {
-    '&:hover': { background: '#f1f1f1'}
-  },
+  // panel: {
+  //   '&:hover': { background: '#f1f1f1'}
+  // },
   gridRoot: {
     flexGrow: 1,
   },
@@ -85,7 +85,7 @@ export default function PostItem(props) {
             <Grid container spacing={16}>
               <Grid item>
                 <ButtonBase className={classes.image}>
-                <Thumbnail className={classes.thumbnail} thumbnail={props.thumbnail} url={props.url}/>
+                  <Thumbnail className={classes.thumbnail} thumbnail={props.thumbnail} url={props.url}/>
                 </ButtonBase>
             </Grid>
               <Grid item xs={12} sm container>
@@ -97,9 +97,9 @@ export default function PostItem(props) {
                     <Typography gutterBottom>{props.author} • {props.domain} • {props.num_comments} comments</Typography>
                     <Typography color="textSecondary">{props.subreddit}</Typography>
                   </Grid>
-                    {/* <Grid item>
-                      <Typography style={{ cursor: 'pointer' }}>Hide</Typography>
-                    </Grid> */}
+                    <Grid item>
+                      <div className='expandComments'>click to expand</div>
+                    </Grid>
                   </Grid>
                   <Grid item>
                     <Typography className={classes.score}>{props.score}
