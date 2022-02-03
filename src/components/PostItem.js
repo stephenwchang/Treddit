@@ -88,7 +88,12 @@ export default function PostItem(props) {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Grid container spacing={16}>
+            <Grid
+            container spacing={16}
+            direction="row"
+            justifyContent="center"
+            alignItems="center"
+            >
               <Grid item>
                 <ButtonBase className={classes.image}>
                   <Thumbnail className={classes.thumbnail} thumbnail={props.thumbnail} url={props.url}/>
@@ -97,10 +102,10 @@ export default function PostItem(props) {
               <Grid item xs={12} sm container>
                 <Grid item xs container direction="column" spacing={16}>
                   <Grid item xs>
-                    <Typography gutterBottom variant="subtitle1">
+                    {/* <Typography> */}
                       <a className='postTitleURL' href={props.url} target='_blank' rel='noopener noreferrer'>{props.title}</a>
-                    </Typography>
-                    <Typography gutterBottom>{props.author} • {props.domain} • {props.num_comments} comments</Typography>
+                    {/* </Typography> */}
+                    <Typography>{props.author} • {props.domain} • {props.num_comments} comments</Typography>
                     <Typography color="textSecondary">{props.subreddit}</Typography>
                   </Grid>
                     {/* <Grid item>

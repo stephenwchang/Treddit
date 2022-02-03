@@ -89,6 +89,7 @@ blockquote p {
 .postTitleURL:link {
   text-decoration: none;
   font-size: 1.1rem;
+  line-height: .5;
 }
 
 .postTitleURL:hover {
