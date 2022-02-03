@@ -28,6 +28,11 @@ const useStyles = makeStyles(theme => ({
   panel: {
     '&:hover': { background: '#F3F4F6'},
     margin: '1px',
+    '&:active': {
+      backgroundColor: '#EDEFF2',
+      boxShadow: 'rgba(225, 228, 232, 0.2) 0 1px 0 inset',
+      transition: 'none 1s',
+    },
   },
   gridRoot: {
     flexGrow: 1,
