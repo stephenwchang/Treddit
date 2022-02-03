@@ -70,7 +70,6 @@ export default function PostItem(props) {
           expanded={expansionPanelOpen} TransitionProps={{ unmountOnExit: true }}>
           <IconLeftExpansionPanelSummary
             className={classes.panel}
-            onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
             expandIcon={
               <Tooltip title={expansionPanelOpen ? "Collapse comment section" : "Expand comment section"}>
                 <ExpandMoreIcon
@@ -98,7 +97,12 @@ export default function PostItem(props) {
                     <Typography color="textSecondary">{props.subreddit}</Typography>
                   </Grid>
                     <Grid item>
-                      <div className='expandComments'>click to expand</div>
+                      <div
+                        className='expandComments'
+                        onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
+                      >
+                        click to expand
+                      </div>
                     </Grid>
                   </Grid>
                   <Grid item>
