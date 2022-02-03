@@ -80,7 +80,7 @@ class App extends Component {
             loader={loader}
           >
             <SubredditChoice handleChange={this.handleChange} handleEnter={this.handleEnter} currentSub={this.state.subreddit} />
-            <PopoverHint/>
+            {/* <PopoverHint/> */}
             <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} />
           </InfiniteScroll>
 

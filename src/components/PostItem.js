@@ -8,7 +8,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Tooltip from '@material-ui/core/Tooltip';
 import Comments from './Comments';
 import Thumbnail from './Thumbnail';
-import PopoverHint from './PopoverHint'
+// import PopoverHint from './PopoverHint'
 import SelfText from './SelfText'
 
 const useStyles = makeStyles(theme => ({
@@ -19,6 +19,9 @@ const useStyles = makeStyles(theme => ({
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
   },
+  panel: {
+    '&:hover': { background: '#f1f1f1', cursor: 'pointer'}
+  }
 }));
 
 const IconLeftExpansionPanelSummary = withStyles({
@@ -35,14 +38,16 @@ export default function PostItem(props) {
     const [expansionPanelOpen, setExpansionPanelOpen] = useState(false);
 
     return (
-      <ExpansionPanel expanded={expansionPanelOpen} TransitionProps={{ unmountOnExit: true }}>
+      <ExpansionPanel
+      onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
+      className={classes.panel} expanded={expansionPanelOpen} TransitionProps={{ unmountOnExit: true }}>
         <IconLeftExpansionPanelSummary
           expandIcon={
             <Tooltip title={expansionPanelOpen ? "Collapse comment section" : "Expand comment section"}>
               <ExpandMoreIcon
                 onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
               >
-                <PopoverHint/>
+                {/* <PopoverHint/> */}
               </ExpandMoreIcon>
               </Tooltip>
           }
