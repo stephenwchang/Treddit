@@ -25,9 +25,10 @@ const useStyles = makeStyles(theme => ({
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
   },
-  // panel: {
-  //   '&:hover': { background: '#f1f1f1'}
-  // },
+  panel: {
+    '&:hover': { background: '#F3F4F6'},
+    margin: '1px',
+  },
   gridRoot: {
     flexGrow: 1,
   },
@@ -70,6 +71,7 @@ export default function PostItem(props) {
           expanded={expansionPanelOpen} TransitionProps={{ unmountOnExit: true }}>
           <IconLeftExpansionPanelSummary
             className={classes.panel}
+            onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
             expandIcon={
               <Tooltip title={expansionPanelOpen ? "Collapse comment section" : "Expand comment section"}>
                 <ExpandMoreIcon
@@ -96,14 +98,14 @@ export default function PostItem(props) {
                     <Typography gutterBottom>{props.author} • {props.domain} • {props.num_comments} comments</Typography>
                     <Typography color="textSecondary">{props.subreddit}</Typography>
                   </Grid>
-                    <Grid item>
+                    {/* <Grid item>
                       <div
                         className='expandComments'
                         onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
                       >
                         click to expand
                       </div>
-                    </Grid>
+                    </Grid> */}
                   </Grid>
                   <Grid item>
                     <Typography className={classes.score}>{props.score}
