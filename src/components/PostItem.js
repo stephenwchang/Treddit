@@ -48,7 +48,7 @@ const useStyles = makeStyles(theme => ({
   },
   score: {
     color: 'green',
-  }
+  },
 }));
 
 const IconLeftExpansionPanelSummary = withStyles({
@@ -90,19 +90,21 @@ export default function PostItem(props) {
             </Grid>
               <Grid item xs={12} sm container>
                 <Grid item xs container direction="column" spacing={16}>
-                    <Grid item xs>
-                      <Typography gutterBottom variant="subtitle1">
-                       <a className='postTitleURL' href={props.url} target='_blank' rel='noopener noreferrer'>{props.title}</a>
-                      </Typography>
-                      <Typography gutterBottom>{props.author} • {props.domain} • {props.num_comments} comments</Typography>
-                      <Typography color="textSecondary">{props.subreddit}</Typography>
-                    </Grid>
+                  <Grid item xs>
+                    <Typography gutterBottom variant="subtitle1">
+                      <a className='postTitleURL' href={props.url} target='_blank' rel='noopener noreferrer'>{props.title}</a>
+                    </Typography>
+                    <Typography gutterBottom>{props.author} • {props.domain} • {props.num_comments} comments</Typography>
+                    <Typography color="textSecondary">{props.subreddit}</Typography>
+                  </Grid>
                     {/* <Grid item>
-                      <Typography style={{ cursor: 'pointer' }}>Remove</Typography>
+                      <Typography style={{ cursor: 'pointer' }}>Hide</Typography>
                     </Grid> */}
                   </Grid>
                   <Grid item>
-                    <Typography className={classes.score}>{props.score} upvotes</Typography>
+                    <Typography className={classes.score}>{props.score}
+                      <div>upvotes</div>
+                    </Typography>
                   </Grid>
                 </Grid>
               </Grid>
