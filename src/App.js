@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Posts from './components/Posts';
-import PopoverHint from './components/PopoverHint'
+// import PopoverHint from './components/PopoverHint'
 import SubredditChoice from './components/SubredditChoice';
 import snoowrap from 'snoowrap';
 import './App.css';
 import InfiniteScroll from 'react-infinite-scroller';
+
 
 let credentials = {
   userAgent: 'Treddit 1.0 by Stephen Chang',
@@ -72,6 +73,7 @@ class App extends Component {
   render() {
     const loader = <div className='loader'>Loading posts...</div>
     return (
+
         <div className='posts'>
           <InfiniteScroll
             pageStart={0}

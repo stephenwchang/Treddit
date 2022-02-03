@@ -13,6 +13,9 @@ export class Posts extends Component {
           author={posts.author.name}
           subreddit={posts.subreddit_name_prefixed}
           selftext={posts.selftext_html}
+          domain={posts.domain}
+          num_comments={posts.num_comments}
+          score={posts.score}
         />
       ));
   }
