@@ -34,9 +34,6 @@ const useStyles = makeStyles(theme => ({
       transition: 'none 1s',
     },
   },
-  gridRoot: {
-    flexGrow: 1,
-  },
   paper: {
     padding: theme.spacing.unit * 2,
     margin: 'auto',
@@ -46,11 +43,8 @@ const useStyles = makeStyles(theme => ({
     width: 128,
     height: 128,
   },
-  img: {
-    margin: 'auto',
-    display: 'block',
-    maxWidth: '100%',
-    maxHeight: '100%',
+  numComments: {
+    color: "#808080",
   },
   score: {
     color: 'green',
@@ -71,7 +65,7 @@ export default function PostItem(props) {
     const [expansionPanelOpen, setExpansionPanelOpen] = useState(false);
 
     return (
-      <div className={classes.gridRoot}>
+      <div className='grid-root'>
         <ExpansionPanel
           expanded={expansionPanelOpen} TransitionProps={{ unmountOnExit: true }}>
           <IconLeftExpansionPanelSummary
@@ -105,8 +99,8 @@ export default function PostItem(props) {
                     {/* <Typography> */}
                       <a className='postTitleURL' href={props.url} target='_blank' rel='noopener noreferrer'>{props.title}</a>
                     {/* </Typography> */}
-                    <Typography>{props.author} • {props.domain} • {props.num_comments} comments</Typography>
-                    <Typography color="textSecondary">{props.subreddit}</Typography>
+                    <div className={classes.commentData}>{props.author} • {props.domain} • {props.subreddit}</div>
+                    <div className={classes.numComments}>{props.num_comments} comments</div>
                   </Grid>
                     {/* <Grid item>
                       <div
