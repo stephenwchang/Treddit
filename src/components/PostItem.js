@@ -9,13 +9,8 @@ import Tooltip from '@material-ui/core/Tooltip';
 import Comments from './Comments';
 import Thumbnail from './Thumbnail';
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import PropTypes from 'prop-types';
 import ButtonBase from '@material-ui/core/ButtonBase';
-// import PopoverHint from './PopoverHint'
 import SelfText from './SelfText'
-import Posts from './Posts';
-import { blue } from '@material-ui/core/colors';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -113,7 +108,7 @@ export default function PostItem(props) {
                   </Grid>
                   <Grid item>
                     <Typography className={classes.score}>{props.score}
-                      <div>upvotes</div>
+                      <div>points</div>
                     </Typography>
                   </Grid>
                 </Grid>

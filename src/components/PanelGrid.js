@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 
 const styles = theme => ({
-  root: {
+  gridRoot: {
     flexGrow: 1,
   },
   paper: {
@@ -30,7 +30,7 @@ const styles = theme => ({
 function PanelGrid(props) {
   const { classes } = props;
   return (
-    <div className={classes.root}>
+    <div className={classes.gridRoot}>
       <Paper className={classes.paper}>
         <Grid container spacing={16}>
           <Grid item>
