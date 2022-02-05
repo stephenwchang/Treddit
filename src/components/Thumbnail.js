@@ -9,9 +9,9 @@ export class Thumbnail extends Component {
 }
 
 const thumbnailStyle = {
-  maxHeight: '60px',
-  width: '100px',
-  paddingRight: '10px'
+  // maxHeight: '60px',
+  // width: '100px',
+  // paddingRight: '10px'
 }
 
 export default Thumbnail;

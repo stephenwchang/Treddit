@@ -35,8 +35,9 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 500,
   },
   image: {
-    width: 128,
-    height: 128,
+    marginRight: '10px',
+      // width: 128,
+      // height: 128,
   },
   numComments: {
     color: "#808080",
