@@ -122,39 +122,6 @@ export default function PostItem(props) {
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </div>
-      // <ExpansionPanel
-      // expanded={expansionPanelOpen} TransitionProps={{ unmountOnExit: true }}>
-      //   <IconLeftExpansionPanelSummary
-      //     className={classes.panel}
-      //     onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
-      //     expandIcon={
-      //       <Tooltip title={expansionPanelOpen ? "Collapse comment section" : "Expand comment section"}>
-      //         <ExpandMoreIcon
-      //           onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
-      //         >
-      //         </ExpandMoreIcon>
-      //         </Tooltip>
-      //     }
-      //     aria-controls="panel1a-content"
-      //     id="panel1a-header"
-      //     >
-      //       <Typography className={classes.heading}>
-      //         <Thumbnail className={classes.thumbnail} thumbnail={props.thumbnail} url={props.url}/>
-      //         <a className='postTitleURL' href={props.url} target='_blank' rel='noopener noreferrer'>{props.title}</a>
-      //         <div className='postSubreddit'>{props.subreddit}</div>
-      //       </Typography>
-      //   </IconLeftExpansionPanelSummary>
 
-      //   <ExpansionPanelDetails>
-      //     <Typography component={'span'} variant={'body2'}>
-      //     <SelfText selftext={props.selftext}/>
-      //     <Comments id={props.id}/>
-      //     </Typography>
-      //   </ExpansionPanelDetails>
-      // </ExpansionPanel>
-
-      // <div style={postStyle} onClick={this.props.renderComments.bind(this, this.props.id, this.state.toggled)}>
-      //   {this.props.title}
-      // </div>
     )
   }
