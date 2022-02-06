@@ -71,7 +71,7 @@ const useStyles = makeStyles(theme => ({
 const IconLeftExpansionPanelSummary = withStyles({
     expandIcon: {
         order: -1,
-        marginRight: 5,
+        marginRight: 0,
     }
 })(ExpansionPanelSummary);
 
