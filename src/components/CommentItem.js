@@ -63,7 +63,7 @@ export default function CommentItem(props) {
       setExpansionPanelOpen(!expansionPanelOpen)
     }}/>
   </Tooltip>
-    : null;
+    : <ExpandMoreIcon style={{visibility: 'hidden'}}/>; //temporary fix to align timestamp
 
   return (
     <div className='grid-root'>
@@ -99,9 +99,8 @@ export default function CommentItem(props) {
 
             </Grid>
             <Grid item>
-              {/* <Typography className={classes.score}>{props.score}
-                <div>points</div>
-              </Typography> */}
+                <div>{props.convertTime(props.created)}</div>
+
             </Grid>
           </Grid>
         </Grid>

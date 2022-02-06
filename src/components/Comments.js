@@ -40,7 +40,9 @@ export class Comments extends Component {
           score={comment.score}
           created={comment.created}
           bodyHtml={comment.body_html}
-          body={comment.body}/>
+          body={comment.body}
+          convertTime={this.props.convertTime}
+        />
       ));
     }
     else {

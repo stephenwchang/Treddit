@@ -6,7 +6,9 @@ import snoowrap from 'snoowrap';
 import './App.css';
 import InfiniteScroll from 'react-infinite-scroller';
 import AppBar from './components/AppBar';
+import moment from 'moment';
 
+moment().format();
 
 let credentials = {
   userAgent: 'Treddit 1.0 by Stephen Chang',
@@ -53,7 +55,11 @@ class App extends Component {
     this.loadPosts(event);
   }
 
-
+  convertTime = time => {
+    let dateTime = moment.unix(time).format("MM-DD-YYYY HH:mm:ss")
+    let timeAgo = moment(dateTime).fromNow()
+    return timeAgo
+  }
 
   loadMore = () => {
     console.log('infinite scroll activated')
@@ -91,7 +97,7 @@ class App extends Component {
           >
             {/* <SubredditChoice handleChange={this.handleChange} handleEnter={this.handleEnter} currentSub={this.state.subreddit} /> */}
             {/* <PopoverHint/> */}
-            <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} subredditClick={this.subredditClick}/>
+            <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} subredditClick={this.subredditClick} convertTime={this.convertTime}/>
           </InfiniteScroll>
 
         </div>

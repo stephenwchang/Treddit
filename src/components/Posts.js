@@ -16,7 +16,9 @@ export class Posts extends Component {
           domain={posts.domain}
           num_comments={posts.num_comments}
           score={posts.score}
+          created={posts.created}
           subredditClick={this.props.subredditClick}
+          convertTime={this.props.convertTime}
         />
       ));
   }

@@ -12,6 +12,7 @@ import Grid from '@material-ui/core/Grid';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import SelfText from './SelfText'
 
+
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
@@ -55,6 +56,9 @@ const useStyles = makeStyles(theme => ({
   subredditText: {
     color: '#0000EE',
    '&:hover': { cursor: 'pointer', textDecoration: 'underline' },
+  },
+  createdText: {
+    marginLeft: '10px',
   }
 }));
 
@@ -114,7 +118,9 @@ export default function PostItem(props) {
                           props.subredditClick(props.subreddit.substring(2))
                         }}
                       >{props.subreddit}</div>
+                    <div className={classes.createdText}>{props.convertTime(props.created)}</div>
                     </div>
+
                     <div className={classes.numComments}>{props.num_comments} comments</div>
                   </Grid>
                     {/* <Grid item>
@@ -137,7 +143,7 @@ export default function PostItem(props) {
           <ExpansionPanelDetails>
             <Typography component={'span'} variant={'body2'}>
             <SelfText selftext={props.selftext}/>
-            <Comments id={props.id}/>
+            <Comments id={props.id} convertTime={props.convertTime}/>
             </Typography>
           </ExpansionPanelDetails>
         </ExpansionPanel>
