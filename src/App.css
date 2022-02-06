@@ -188,23 +188,23 @@ blockquote p {
 .animated-title {
   color: rgb(0, 0, 0);
   font-family: Roboto, Arial, sans-serif;
-  height: 90vmin;
-  left: 51%;
+  height: 80px;
+  left: 215px;
   position: absolute;
-  top: 57%;
+  top: 26px;
   transform: translate(-50%, -50%);
-  width: 90vmin;
-
+  width: 300px;
 }
+
 .animated-title > div {
-  height: 55%;
+  height: 100%;
   overflow: hidden;
   position: absolute;
   width: 100%;
 }
 .animated-title > div div {
-  font-size: 5.5vmin;
-  padding: 2vmin 2vmin;
+  font-size: 37px;
+  padding: 10px;
   position: absolute;
 }
 .animated-title > div div span {
@@ -233,12 +233,39 @@ blockquote p {
   color: white;
   animation-delay: 1s;
   animation-fill-mode: forwards;
-  top: 8%;
-  left: 14%;
-  bottom: 10%;
+  top: 52px;
+  left: 85px;
+  bottom: 100px;
   transform: translate(0, -100%);
 }
 
-.textBottom {
+@media only screen and (max-width: 600px) {
+  .animated-title {
+    color: rgb(0, 0, 0);
+    font-family: Roboto, Arial, sans-serif;
+    height: 80px;
+    left: 207px;
+    position: absolute;
+    top: 20px;
+    transform: translate(-50%, -50%);
+    width: 300px;
+  }
+  .animated-title > div div {
+    font-size: 32px;
+    padding: 10px;
+    position: absolute;
+  }
+
+  .animated-title > div.text-bottom div {
+    animation: showBottomText 1.5s;
+    font-size: 8px;
+    color: white;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    top: 52px;
+    left: 85px;
+    bottom: 100px;
+    transform: translate(0, -100%);
+  }
 
 }

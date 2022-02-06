@@ -63,7 +63,7 @@ class App extends Component {
         this.setState({ posts: extendedListing });
       })
     });
-  }
+   }
 
 
   // renderComments = (id) => {
