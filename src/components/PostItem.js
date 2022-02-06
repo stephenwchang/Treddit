@@ -12,7 +12,6 @@ import Grid from '@material-ui/core/Grid';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import SelfText from './SelfText'
 
-
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
@@ -109,6 +108,5 @@ export default function PostItem(props) {
           </ExpansionPanelDetails>
         </ExpansionPanel>
       </div>
-
     )
   }

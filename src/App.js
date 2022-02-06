@@ -7,6 +7,7 @@ import './App.css';
 import InfiniteScroll from 'react-infinite-scroller';
 import AppBar from './components/AppBar';
 import moment from 'moment';
+import HoverPanel from './components/HoverPanel'
 
 moment().format();
 
@@ -96,6 +97,7 @@ class App extends Component {
     const loader = <div className='loader'>Loading posts...</div>
     return (
         <div className='posts'>
+          <HoverPanel currentSub={this.state.subreddit}/>
           <AppBar handleClick={this.handleClick} handleEnter={this.handleEnter} subredditClick={this.subredditClick} currentSub={this.state.subreddit} subNotFound={this.state.subNotFound} handleClose={this.handleClose}/>
           <InfiniteScroll
             pageStart={0}

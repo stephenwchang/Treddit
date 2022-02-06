@@ -284,6 +284,23 @@ blockquote p {
   text-decoration: underline;
 }
 
+
+.returnToTop {
+  font-size: 6px;
+}
+
+.toTopOfSub {
+  font-size: 16px;
+  text-align: center;
+}
+
+.MuiSnackbarContent-message {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 /* breakpoint modifications */
 @media only screen and (max-width: 600px) {
   .animated-title {
