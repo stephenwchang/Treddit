@@ -242,6 +242,7 @@ blockquote p {
 
 .postThumbnail {
   max-width: 140px;
+  border-radius: 5px;
 }
 
 .domainText {
