@@ -92,16 +92,16 @@ export default function SubredditChoice(props) {
         variant="outlined"
         label="Current Subreddit"
         value={props.currentSub}
-        // onChange={props.handleChange}
-        // InputProps={{
-        //   startAdornment: <InputAdornment position="start"></InputAdornment>,
-        // }}
+        onChange={props.handleChange}
+        InputProps={{
+          startAdornment: <InputAdornment position="start"></InputAdornment>,
+        }}
       >
-        {/* {ranges.map(option => (
+        {ranges.map(option => (
           <MenuItem key={option.value} value={option.value}>
             {option.label}
           </MenuItem>
-        ))} */}
+        ))}
       </TextField>
       <TextField
         id="outlined-simple-start-adornment"

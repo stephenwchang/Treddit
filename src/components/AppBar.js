@@ -9,6 +9,8 @@ import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import MenuItem from '@material-ui/core/MenuItem';
+
 
 const styles = theme => ({
   root: {
@@ -124,7 +126,8 @@ function SearchAppBar(props) {
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
-            />
+            >
+            </InputBase>
             <PopoverHint subNotFound={props.subNotFound} handleClose={props.handleClose}/>
           </div>
         </Toolbar>

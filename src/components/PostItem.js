@@ -49,7 +49,7 @@ const useStyles = makeStyles(theme => ({
     color: 'green',
   },
   commentData: {
-    display: 'flex',
+    // display: 'flex',
   },
   authorText: {
     color: '#A55858',
