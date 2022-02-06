@@ -5,6 +5,7 @@ import SubredditChoice from './components/SubredditChoice';
 import snoowrap from 'snoowrap';
 import './App.css';
 import InfiniteScroll from 'react-infinite-scroller';
+import AppBar from './components/AppBar';
 
 
 let credentials = {
@@ -35,7 +36,7 @@ class App extends Component {
 
   }
 
-  handleChange = event => {
+  handleClick = event => {
     this.setState({ subreddit: event.target.value });
     this.loadPosts(event.target.value);
   }
@@ -80,15 +81,15 @@ class App extends Component {
   render() {
     const loader = <div className='loader'>Loading posts...</div>
     return (
-
         <div className='posts'>
+          <AppBar handleClick={this.handleClick} handleEnter={this.handleEnter} currentSub={this.state.subreddit}/>
           <InfiniteScroll
             pageStart={0}
             loadMore={this.loadMore}
             hasMore={true}
             loader={loader}
           >
-            <SubredditChoice handleChange={this.handleChange} handleEnter={this.handleEnter} currentSub={this.state.subreddit} />
+            {/* <SubredditChoice handleChange={this.handleChange} handleEnter={this.handleEnter} currentSub={this.state.subreddit} /> */}
             {/* <PopoverHint/> */}
             <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} subredditClick={this.subredditClick}/>
           </InfiniteScroll>
