@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     width: '100%',
   },
   heading: {
-    fontSize: theme.typography.pxToRem(15),
+    fontSize: theme.typography.pxToRem(20),
     fontWeight: theme.typography.fontWeightRegular,
   },
   panel: {
@@ -46,6 +46,13 @@ const useStyles = makeStyles(theme => ({
   score: {
     color: 'green',
   },
+  commentData: {
+    display: 'flex',
+  },
+  authorText: {
+    color: '#A55858',
+    marginRight: '10px',
+  }
 }));
 
 const IconLeftExpansionPanelSummary = withStyles({
@@ -96,7 +103,11 @@ export default function PostItem(props) {
                     {/* <Typography> */}
                       <a className='postTitleURL' href={props.url} target='_blank' rel='noopener noreferrer'>{props.title}</a>
                     {/* </Typography> */}
-                    <div className={classes.commentData}>{props.author} • {props.domain} • {props.subreddit}</div>
+                    <div className={classes.commentData}>
+                      <div className={classes.authorText}>{props.author}</div>
+                      <div style={{ marginRight: '10px'}}>{props.domain}</div>
+                      <div>{props.subreddit}</div>
+                    </div>
                     <div className={classes.numComments}>{props.num_comments} comments</div>
                   </Grid>
                     {/* <Grid item>

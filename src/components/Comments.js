@@ -32,7 +32,15 @@ export class Comments extends Component {
   render() {
     if (this.state.comments.length > 0) {
       return this.state.comments.map((comment) => (
-        <CommentItem key={comment.id} depth={comment.depth} authorName={comment.author.name} replies={comment.replies} score={comment.score} created={comment.created} bodyHtml={comment.body_html} body={comment.body}/>
+        <CommentItem
+          key={comment.id}
+          depth={comment.depth}
+          authorName={comment.author.name}
+          replies={comment.replies}
+          score={comment.score}
+          created={comment.created}
+          bodyHtml={comment.body_html}
+          body={comment.body}/>
       ));
     }
     else {

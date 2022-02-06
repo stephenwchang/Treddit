@@ -30,6 +30,11 @@ const useStyles = makeStyles(theme => ({
   },
   numReplies: {
     '&:hover': { cursor: 'pointer' },
+    color: '#0000EE',
+    opacity: '0.8',
+  },
+  commentAuthor: {
+    color: '#A55858',
   }
 }));
 
@@ -84,9 +89,9 @@ export default function CommentItem(props) {
             <Grid item xs>
 
               {/* <Typography className={classes.heading}> */}
-                <div className='commentAuthor'>{props.authorName}</div>
-                <p dangerouslySetInnerHTML={{ __html: props.bodyHtml }}>
-                </p>
+                <div className={classes.commentAuthor}>{props.authorName}</div>
+                <div dangerouslySetInnerHTML={{ __html: props.bodyHtml }}>
+                </div>
               {/* </Typography> */}
               {/* <div className={classes.commentData}>{props.author} • {props.domain} • {props.subreddit}</div> */}
               <div className={classes.numReplies}>{(props.replies.length > 0 ) ? props.replies.length : 'No'} {(props.replies.length === 1) ?  'reply' :  'replies'}</div>

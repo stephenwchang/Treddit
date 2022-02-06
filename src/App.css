@@ -75,7 +75,7 @@ blockquote p {
 } */
 
 .commentAuthor {
-  color: grey;
+  color: #A55858 ;
 }
 
 .postSubreddit {
@@ -88,7 +88,7 @@ blockquote p {
 
 .postTitleURL:link {
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 .postTitleURL:hover {
