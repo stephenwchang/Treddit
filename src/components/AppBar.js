@@ -111,11 +111,10 @@ function SearchAppBar(props) {
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon/>
-              {/* <img style={{height:'30px', width: '30px'}}src={'https://play-lh.googleusercontent.com/OM8eYliR1-gmyaAdKm15hr5-8_OjSJXItxy8MUpBUU9MYucBpaNcPN50snuvlYn0mQ=s200'}/> */}
             </div>
             <InputBase
               onKeyDown={props.handleEnter}
-              placeholder={props.currentSub}
+              placeholder={'r/' + props.currentSub}
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
