@@ -113,7 +113,7 @@ export default function PostItem(props) {
                   <div style={{fontSize: '12px'}}>({props.domain})</div>
                 </ButtonBase>
             </Grid>
-              <Grid item xs={9} sm container>
+              <Grid item xs={7} container>
                 <Grid item xs container direction="column" spacing={16}>
                   <Grid item xs>
                       <a className='postTitleURL' href={props.url} target='_blank' rel='noopener noreferrer'>{props.title}</a>
