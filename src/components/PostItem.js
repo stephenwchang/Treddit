@@ -40,6 +40,7 @@ const useStyles = makeStyles(theme => ({
       // height: 128,
   },
   numComments: {
+    '&:hover': { cursor: 'pointer' },
     color: "#808080",
   },
   score: {

@@ -28,6 +28,9 @@ const useStyles = makeStyles(theme => ({
       transition: 'none 1s',
     },
   },
+  numReplies: {
+    '&:hover': { cursor: 'pointer' },
+  }
 }));
 
 
@@ -85,8 +88,8 @@ export default function CommentItem(props) {
                 <p dangerouslySetInnerHTML={{ __html: props.bodyHtml }}>
                 </p>
               {/* </Typography> */}
-              <div className={classes.commentData}>{props.author} • {props.domain} • {props.subreddit}</div>
-              <div className={classes.numComments}>{props.replies.length} {(props.replies.length === 1) ?  'reply' :  'replies'}</div>
+              {/* <div className={classes.commentData}>{props.author} • {props.domain} • {props.subreddit}</div> */}
+              <div className={classes.numReplies}>{(props.replies.length > 0 ) ? props.replies.length : 'No'} {(props.replies.length === 1) ?  'reply' :  'replies'}</div>
             </Grid>
 
             </Grid>
