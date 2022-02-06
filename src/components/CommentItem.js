@@ -35,6 +35,10 @@ const useStyles = makeStyles(theme => ({
   },
   commentAuthor: {
     color: '#A55858',
+  },
+  createdText: {
+    fontStyle: 'italic',
+    fontSize: '14px',
   }
 }));
 
@@ -99,7 +103,7 @@ export default function CommentItem(props) {
 
             </Grid>
             <Grid item>
-                <div>{props.convertTime(props.created)}</div>
+                <div className={classes.createdText}>{props.convertTime(props.created)}</div>
 
             </Grid>
           </Grid>
