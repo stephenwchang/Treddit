@@ -47,6 +47,13 @@ class App extends Component {
     }
   }
 
+  subredditClick = event => {
+    this.setState({ subreddit: event });
+    this.loadPosts(event);
+  }
+
+
+
   loadMore = () => {
     console.log('infinite scroll activated')
     let listingAmount = this.state.posts.length;
@@ -83,7 +90,7 @@ class App extends Component {
           >
             <SubredditChoice handleChange={this.handleChange} handleEnter={this.handleEnter} currentSub={this.state.subreddit} />
             {/* <PopoverHint/> */}
-            <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} />
+            <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} subredditClick={this.subredditClick}/>
           </InfiniteScroll>
 
         </div>

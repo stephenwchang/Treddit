@@ -88,9 +88,11 @@ blockquote p {
   font-size: 1.4rem;
 }
 
+
 .postTitleURL:hover {
   cursor: pointer;
   text-decoration: underline;
+
 }
 
 @media only screen and (max-width: 768px) {

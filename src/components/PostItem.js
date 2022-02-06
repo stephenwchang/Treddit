@@ -51,6 +51,10 @@ const useStyles = makeStyles(theme => ({
   authorText: {
     color: '#A55858',
     marginRight: '10px',
+  },
+  subredditText: {
+    color: '#0000EE',
+   '&:hover': { cursor: 'pointer', textDecoration: 'underline' },
   }
 }));
 
@@ -104,7 +108,12 @@ export default function PostItem(props) {
                     <div className={classes.commentData}>
                       <div className={classes.authorText}>{props.author}</div>
                       {/* <div style={{ marginRight: '10px'}}>{props.domain}</div> */}
-                      <div>{props.subreddit}</div>
+                      <div
+                        className={classes.subredditText}
+                        onClick={() => {
+                          props.subredditClick(props.subreddit.substring(2))
+                        }}
+                      >{props.subreddit}</div>
                     </div>
                     <div className={classes.numComments}>{props.num_comments} comments</div>
                   </Grid>
