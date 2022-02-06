@@ -58,7 +58,9 @@ const useStyles = makeStyles(theme => ({
    '&:hover': { cursor: 'pointer', textDecoration: 'underline' },
   },
   createdText: {
-    marginLeft: '10px',
+    fontSize: '14px',
+    fontStyle: 'italic',
+    marginLeft: '5px',
   }
 }));
 
@@ -109,6 +111,7 @@ export default function PostItem(props) {
                 <Grid item xs container direction="column" spacing={16}>
                   <Grid item xs>
                       <a className='postTitleURL' href={props.url} target='_blank' rel='noopener noreferrer'>{props.title}</a>
+                      <span className={classes.createdText}>{props.convertTime(props.created)}</span>
                     <div className={classes.commentData}>
                       <div className={classes.authorText}>{props.author}</div>
                       {/* <div style={{ marginRight: '10px'}}>{props.domain}</div> */}
@@ -118,7 +121,7 @@ export default function PostItem(props) {
                           props.subredditClick(props.subreddit.substring(2))
                         }}
                       >{props.subreddit}</div>
-                    <div className={classes.createdText}>{props.convertTime(props.created)}</div>
+                    {/* <div className={classes.createdText}>{props.convertTime(props.created)}</div> */}
                     </div>
 
                     <div className={classes.numComments}>{props.num_comments} comments</div>
