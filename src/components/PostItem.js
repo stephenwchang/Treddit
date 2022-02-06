@@ -127,9 +127,9 @@ export default function PostItem(props) {
                     </Grid> */}
                   </Grid>
                   <Grid item>
-                    <Typography className={classes.score}>{props.score}
+                    {/* <Typography className={classes.score}>{props.score}
                       <div>points</div>
-                    </Typography>
+                    </Typography> */}
                   </Grid>
                 </Grid>
               </Grid>
