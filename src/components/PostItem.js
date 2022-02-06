@@ -42,6 +42,8 @@ const useStyles = makeStyles(theme => ({
   numComments: {
     '&:hover': { cursor: 'pointer', textDecoration: 'underline' },
     color: "#808080",
+    fontSize: '14px',
+
   },
   score: {
     color: 'green',
@@ -51,10 +53,12 @@ const useStyles = makeStyles(theme => ({
   },
   authorText: {
     color: '#A55858',
+    fontSize: '14px',
     marginRight: '10px',
   },
   subredditText: {
     color: '#0000EE',
+    fontSize: '14px',
    '&:hover': { cursor: 'pointer', textDecoration: 'underline' },
   },
   createdText: {
