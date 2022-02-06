@@ -101,21 +101,16 @@ export default function PostItem(props) {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Grid
-            container spacing={16}
-            direction="row"
-            justifyContent="left"
-            alignItems="center"
-            >
+            <Grid container spacing={16} direction="row" justifyContent="left"alignItems="center">
               <Grid item>
                 <ButtonBase className={classes.image}>
                   <Thumbnail className={classes.thumbnail} thumbnail={props.thumbnail} url={props.url}/>
                   <div className='domainText'>({props.domain})</div>
                 </ButtonBase>
-            </Grid>
-              <Grid item xs={7} md={10} container>
-                <Grid item xs container direction="column" spacing={16}>
-                  <Grid item xs>
+              </Grid>
+              {/* <Grid item xs={7} md={10} container> */}
+                <Grid item xs container direction="column" spacing={1}>
+                  <Grid item>
                       <a className='postTitleURL' href={props.url} target='_blank' rel='noopener noreferrer'>{props.title}</a>
                       <span className={classes.createdText}>{props.convertTime(props.created)}</span>
                     <div className={classes.commentData}>
@@ -132,22 +127,9 @@ export default function PostItem(props) {
 
                     <div className={classes.numComments}>{props.num_comments} comments</div>
                   </Grid>
-                    {/* <Grid item>
-                      <div
-                        className='expandComments'
-                        onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
-                      >
-                        click to expand
-                      </div>
-                    </Grid> */}
-                  </Grid>
-                  <Grid item>
-                    {/* <Typography className={classes.score}>{props.score}
-                      <div>points</div>
-                    </Typography> */}
-                  </Grid>
                 </Grid>
-              </Grid>
+              {/* </Grid> */}
+            </Grid>
             </IconLeftExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography component={'span'} variant={'body2'}>
