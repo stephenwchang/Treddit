@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   numReplies: {
-    '&:hover': { cursor: 'pointer' },
+    '&:hover': { cursor: 'pointer', textDecoration: 'underline' },
     color: '#0000EE',
     opacity: '0.8',
   },

@@ -128,7 +128,6 @@ export default function PostItem(props) {
                     <div className={classes.numComments}>{props.num_comments} comments</div>
                   </Grid>
                 </Grid>
-              {/* </Grid> */}
             </Grid>
             </IconLeftExpansionPanelSummary>
           <ExpansionPanelDetails>
