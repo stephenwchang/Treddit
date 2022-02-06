@@ -327,29 +327,29 @@ blockquote p {
   }
 
   .domainText {
-    font-size: 10px;
+    font-size: 11px;
     inline-size: 100px;
     overflow-wrap: break-word;
   }
 
   .commentData {
-    display: inline;
+    /* display: inline; */
   }
 
   .subredditText {
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .createdText {
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .authorText {
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .numComments {
-    font-size: 10px;
+    font-size: 11px;
   }
 
 }
