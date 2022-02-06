@@ -6,6 +6,9 @@ import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Tooltip from '@material-ui/core/Tooltip';
+import Thumbnail from './Thumbnail';
+import Grid from '@material-ui/core/Grid';
+import ButtonBase from '@material-ui/core/ButtonBase';
 
 
 const useStyles = makeStyles(theme => ({
@@ -54,9 +57,9 @@ export default function CommentItem(props) {
   </Tooltip>
     : null;
 
-
   return (
-    <ExpansionPanel defaultExpanded={expanded} expanded={expansionPanelOpen} TransitionProps={{ unmountOnExit: true }}>
+    <div className='grid-root'>
+      <ExpansionPanel defaultExpanded={expanded} expanded={expansionPanelOpen} TransitionProps={{ unmountOnExit: true }}>
       <ExpansionPanelSummary
         className = {classes.panel}
         onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
@@ -64,27 +67,43 @@ export default function CommentItem(props) {
         aria-controls="panel1a-content"
         id="panel1a-header"
       >
-        <Typography className={classes.heading}>
-          <div className='commentAuthor'>{props.authorName}</div>
-          <p dangerouslySetInnerHTML={{ __html: props.bodyHtml }}>
-          </p>
-        </Typography>
-      </ExpansionPanelSummary>
-      <ExpansionPanelDetails>
+        <Grid
+        container spacing={16}
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        >
+        <Grid item>
+{/* possibly include user avatar here */}
+        </Grid>
+        <Grid item xs={12} sm container>
+          <Grid item xs container direction="column" spacing={16}>
+            <Grid item xs>
+
+              {/* <Typography className={classes.heading}> */}
+                <div className='commentAuthor'>{props.authorName}</div>
+                <p dangerouslySetInnerHTML={{ __html: props.bodyHtml }}>
+                </p>
+              {/* </Typography> */}
+              <div className={classes.commentData}>{props.author} • {props.domain} • {props.subreddit}</div>
+              <div className={classes.numComments}>{props.replies.length} {(props.replies.length === 1) ?  'reply' :  'replies'}</div>
+            </Grid>
+
+            </Grid>
+            <Grid item>
+              {/* <Typography className={classes.score}>{props.score}
+                <div>points</div>
+              </Typography> */}
+            </Grid>
+          </Grid>
+        </Grid>
+        </ExpansionPanelSummary>
+        <ExpansionPanelDetails>
         <Typography component={'span'} variant={'body2'}>
           {renderReplies()}
         </Typography>
       </ExpansionPanelDetails>
     </ExpansionPanel>
-        // deprecated original comment generating code - inefficient and unable to collapse - used manual css indenting
-        // <div>
-        //   <div className='commentItem' style={{marginLeft: `${((this.props.depth) * 20).toString()}px` }}>
-        //     <div style={authorStyle}>{this.props.authorName}</div>
-        //     <p dangerouslySetInnerHTML={{ __html: this.props.bodyHtml }}>
-        //     </p>
-        //   </div>
-        //   {this.renderReplies()}
-        // </div>
-
-      )
+    </div>
+    )
 }
