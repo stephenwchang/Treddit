@@ -32,11 +32,12 @@ class App extends Component {
   }
 
   loadPosts = (sub) => {
+    let currentSub = this.state.subreddit
     r.getHot(sub).then(result => {
       this.setState({ posts: Array.from(result) }) // temporary fix due to returned proxy object from snoowrap
       console.log(this.state.posts)
     }, () => {
-      this.setState({subNotFound: true})
+      this.setState({subNotFound: true, subreddit: currentSub})
     })
   }
 
