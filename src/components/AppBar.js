@@ -81,17 +81,37 @@ function SearchAppBar(props) {
     <div className={classes.root}>
       <AppBar className={classes.appBar} position="static">
         <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
-            {/* <MenuIcon /> */}
-          </IconButton>
-          {/* <img src={'http://www.clker.com/cliparts/f/5/0/6/12422580181795848664NYCS-bull-trans-T.svg.med.png'}/> */}
-          <Typography className={classes.title} variant="h5" color="inherit" noWrap>
-            Tredditor
-          </Typography>
+          {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
+            <MenuIcon />
+          </IconButton> */}
+          <img
+            src={'https://i.redd.it/m1pd3gtxch431.jpg'}
+            style={{
+                height:'45px',
+                width: '45px',
+                borderRadius: '20px',
+                marginRight: '10px',
+              }}
+            alt={''}
+          />
+
+          {/* <Typography className={classes.title} variant="h5" color="inherit" noWrap> */}
+           <div className='animated-title'>
+            <div className='text-top'>
+              <div>
+                <span>Tredditor</span>
+              </div>
+            </div>
+              <div className='text-bottom'>
+                <div className='textBottom'>a Reddit app</div>
+              </div>
+           </div>
+          {/* </Typography> */}
           <div className={classes.grow} />
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon/>
+              {/* <img style={{height:'30px', width: '30px'}}src={'https://play-lh.googleusercontent.com/OM8eYliR1-gmyaAdKm15hr5-8_OjSJXItxy8MUpBUU9MYucBpaNcPN50snuvlYn0mQ=s200'}/> */}
             </div>
             <InputBase
               onKeyDown={props.handleEnter}
