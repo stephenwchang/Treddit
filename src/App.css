@@ -246,7 +246,7 @@ blockquote p {
     height: 80px;
     left: 207px;
     position: absolute;
-    top: 20px;
+    top: 18px;
     transform: translate(-50%, -50%);
     width: 300px;
   }
@@ -257,14 +257,14 @@ blockquote p {
   }
 
   .animated-title > div.text-bottom div {
-    animation: showBottomText 1.5s;
+    animation: showBottomText 2.5s;
     font-size: 8px;
     color: white;
-    animation-delay: 1s;
+    animation-delay: 1.5s;
     animation-fill-mode: forwards;
-    top: 52px;
+    top: 53px;
     left: 85px;
-    bottom: 100px;
+    bottom: -40px;
     transform: translate(0, -100%);
   }
 
