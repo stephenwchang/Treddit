@@ -16,6 +16,15 @@ const useStyles = makeStyles(theme => ({
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
   },
+  panel: {
+    '&:hover': { background: '#F3F4F6'},
+    margin: '1px',
+    '&:active': {
+      backgroundColor: '#EDEFF2',
+      boxShadow: 'rgba(225, 228, 232, 0.2) 0 1px 0 inset',
+      transition: 'none 1s',
+    },
+  },
 }));
 
 
@@ -35,7 +44,7 @@ export default function CommentItem(props) {
   // expand only up to a depth of 5 comments by default
   const expanded = props.replies[0] ? props.depth < 6 ? true : props.depth > 6 ? true : false : false;
   // manually control and set expansion state
-  const [expansionPanelOpen, setExpansionPanelOpen] = useState(expanded);
+  const [expansionPanelOpen, setExpansionPanelOpen] = useState(!expanded);
   // render icon only if expandable/collapsible
   const iconRender = props.replies[0] ?
   <Tooltip title={expansionPanelOpen ? "Collapse comment thread" : "Expand comment thread"}>
@@ -49,6 +58,8 @@ export default function CommentItem(props) {
   return (
     <ExpansionPanel defaultExpanded={expanded} expanded={expansionPanelOpen} TransitionProps={{ unmountOnExit: true }}>
       <ExpansionPanelSummary
+        className = {classes.panel}
+        onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
         expandIcon={iconRender}
         aria-controls="panel1a-content"
         id="panel1a-header"
