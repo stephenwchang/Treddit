@@ -29,10 +29,10 @@ class App extends Component {
   }
 
   loadPosts = (sub) => {
-    // r.getHot(sub).then(result => {
-    //   this.setState({ posts: Array.from(result) }) // temporary fix due to returned proxy object from snoowrap
-    //   console.log(this.state.posts)
-    // });
+    r.getHot(sub).then(result => {
+      this.setState({ posts: Array.from(result) }) // temporary fix due to returned proxy object from snoowrap
+      console.log(this.state.posts)
+    });
 
   }
 
@@ -58,11 +58,11 @@ class App extends Component {
   loadMore = () => {
     console.log('infinite scroll activated')
     let listingAmount = this.state.posts.length;
-    // r.getHot(this.state.subreddit, {limit: listingAmount}).then(myListing => {
-    //   myListing.fetchMore({amount: 25}).then(extendedListing => {
-    //     this.setState({ posts: extendedListing });
-    //   })
-    // });
+    r.getHot(this.state.subreddit, {limit: listingAmount}).then(myListing => {
+      myListing.fetchMore({amount: 25}).then(extendedListing => {
+        this.setState({ posts: extendedListing });
+      })
+    });
   }
 
 
