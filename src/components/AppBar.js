@@ -82,9 +82,10 @@ function SearchAppBar(props) {
       <AppBar className={classes.appBar} position="static">
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
-            <MenuIcon />
+            {/* <MenuIcon /> */}
           </IconButton>
-          <Typography className={classes.title} variant="h6" color="inherit" noWrap>
+          {/* <img src={'http://www.clker.com/cliparts/f/5/0/6/12422580181795848664NYCS-bull-trans-T.svg.med.png'}/> */}
+          <Typography className={classes.title} variant="h5" color="inherit" noWrap>
             Tredditor
           </Typography>
           <div className={classes.grow} />
