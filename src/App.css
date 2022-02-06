@@ -74,9 +74,6 @@ blockquote p {
   padding: 0px 5px 15px 24px!important;
 } */
 
-.commentAuthor {
-  color: #A55858 ;
-}
 
 .postSubreddit {
   color: grey;
@@ -93,6 +90,7 @@ blockquote p {
 
 .postTitleURL:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 @media only screen and (max-width: 768px) {

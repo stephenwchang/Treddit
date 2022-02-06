@@ -36,11 +36,10 @@ const useStyles = makeStyles(theme => ({
   },
   image: {
     marginRight: '10px',
-      // width: 128,
-      // height: 128,
+    display: 'inline',
   },
   numComments: {
-    '&:hover': { cursor: 'pointer' },
+    '&:hover': { cursor: 'pointer', textDecoration: 'underline' },
     color: "#808080",
   },
   score: {
@@ -95,17 +94,16 @@ export default function PostItem(props) {
               <Grid item>
                 <ButtonBase className={classes.image}>
                   <Thumbnail className={classes.thumbnail} thumbnail={props.thumbnail} url={props.url}/>
+                  <div style={{fontSize: '12px'}}>({props.domain})</div>
                 </ButtonBase>
             </Grid>
               <Grid item xs={12} sm container>
                 <Grid item xs container direction="column" spacing={16}>
                   <Grid item xs>
-                    {/* <Typography> */}
                       <a className='postTitleURL' href={props.url} target='_blank' rel='noopener noreferrer'>{props.title}</a>
-                    {/* </Typography> */}
                     <div className={classes.commentData}>
                       <div className={classes.authorText}>{props.author}</div>
-                      <div style={{ marginRight: '10px'}}>{props.domain}</div>
+                      {/* <div style={{ marginRight: '10px'}}>{props.domain}</div> */}
                       <div>{props.subreddit}</div>
                     </div>
                     <div className={classes.numComments}>{props.num_comments} comments</div>
