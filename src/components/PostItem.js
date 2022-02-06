@@ -38,6 +38,7 @@ const useStyles = makeStyles(theme => ({
   image: {
     marginRight: '10px',
     display: 'inline',
+    borderRadius: '10px',
   },
   numComments: {
     '&:hover': { cursor: 'pointer', textDecoration: 'underline' },
