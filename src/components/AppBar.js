@@ -14,6 +14,11 @@ const styles = theme => ({
   root: {
     width: '100%',
   },
+  appBar: {
+    borderRadius: '10px',
+    opacity: '.9',
+    backgroundColor: '#6897bb',
+  },
   grow: {
     flexGrow: 1,
   },
@@ -74,7 +79,7 @@ function SearchAppBar(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar className={classes.appBar} position="static">
         <Toolbar>
           <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
             <MenuIcon />
