@@ -96,16 +96,17 @@ function SearchAppBar(props) {
           />
 
           {/* <Typography className={classes.title} variant="h5" color="inherit" noWrap> */}
-           <div className='animated-title'>
-            <div className='text-top'>
-              <div>
-                <span>Tredditor</span>
+            <div className='animated-title'>
+              <div className='text-top'>
+                <div>
+                  <span>Tredditor</span>
+                </div>
               </div>
+                <div className='text-bottom'>
+                  <div className='textBottom'>a Reddit app</div>
+                </div>
             </div>
-              <div className='text-bottom'>
-                <div className='textBottom'>a Reddit app</div>
-              </div>
-           </div>
+
           {/* </Typography> */}
           <div className={classes.grow} />
           <div className={classes.search}>

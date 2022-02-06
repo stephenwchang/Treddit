@@ -88,7 +88,7 @@ class App extends Component {
     const loader = <div className='loader'>Loading posts...</div>
     return (
         <div className='posts'>
-          <AppBar handleClick={this.handleClick} handleEnter={this.handleEnter} currentSub={this.state.subreddit}/>
+          <AppBar handleClick={this.handleClick} handleEnter={this.handleEnter} subredditClick={this.subredditClick} currentSub={this.state.subreddit}/>
           <InfiniteScroll
             pageStart={0}
             loadMore={this.loadMore}

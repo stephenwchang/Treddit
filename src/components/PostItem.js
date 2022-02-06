@@ -110,7 +110,7 @@ export default function PostItem(props) {
               <Grid item>
                 <ButtonBase className={classes.image}>
                   <Thumbnail className={classes.thumbnail} thumbnail={props.thumbnail} url={props.url}/>
-                  <div style={{fontSize: '12px'}}>({props.domain})</div>
+                  <div style={{fontSize: '10px', inlineSize: '100px',overflowWrap:'break-word'}}>({props.domain})</div>
                 </ButtonBase>
             </Grid>
               <Grid item xs={8} container>
