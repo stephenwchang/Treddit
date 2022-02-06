@@ -239,6 +239,10 @@ blockquote p {
   transform: translate(0, -100%);
 }
 
+.postThumbnail {
+  max-width: 140px;
+}
+
 @media only screen and (max-width: 600px) {
   .animated-title {
     color: rgb(0, 0, 0);
@@ -266,6 +270,14 @@ blockquote p {
     left: 85px;
     bottom: -40px;
     transform: translate(0, -100%);
+  }
+
+  .postThumbnail {
+    max-width: 100px;
+  }
+
+  .postTitleURL:link {
+    font-size: 1rem;
   }
 
 }

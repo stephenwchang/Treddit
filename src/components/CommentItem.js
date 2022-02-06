@@ -63,7 +63,7 @@ export default function CommentItem(props) {
   // render icon only if expandable/collapsible
   const iconRender = props.replies[0] ?
   <Tooltip title={expansionPanelOpen ? "Collapse comment thread" : "Expand comment thread"}>
-    <ExpandMoreIcon onClick={() => {
+    <ExpandMoreIcon style={{padding: '0px'}} onClick={() => {
       setExpansionPanelOpen(!expansionPanelOpen)
     }}/>
   </Tooltip>

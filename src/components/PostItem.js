@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
   },
   panel: {
     '&:hover': { background: '#F3F4F6'},
-    margin: '1px',
+    margin: '3px',
     '&:active': {
       backgroundColor: '#EDEFF2',
       boxShadow: 'rgba(225, 228, 232, 0.2) 0 1px 0 inset',
@@ -87,10 +87,12 @@ export default function PostItem(props) {
           expanded={expansionPanelOpen} TransitionProps={{ unmountOnExit: true }}>
           <IconLeftExpansionPanelSummary
             className={classes.panel}
+            style={{padding: '1px'}}
             onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
             expandIcon={
               <Tooltip title={expansionPanelOpen ? "Collapse comment section" : "Expand comment section"}>
                 <ExpandMoreIcon
+                  style={{padding: '0px'}}
                   onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
                 >
                 </ExpandMoreIcon>
@@ -111,7 +113,7 @@ export default function PostItem(props) {
                   <div style={{fontSize: '12px'}}>({props.domain})</div>
                 </ButtonBase>
             </Grid>
-              <Grid item xs={12} sm container>
+              <Grid item xs={9} sm container>
                 <Grid item xs container direction="column" spacing={16}>
                   <Grid item xs>
                       <a className='postTitleURL' href={props.url} target='_blank' rel='noopener noreferrer'>{props.title}</a>
