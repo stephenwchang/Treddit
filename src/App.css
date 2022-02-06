@@ -175,6 +175,7 @@ blockquote p {
 
 }
 
+/* animate logo */
 @import url('https://fonts.googleapis.com/css?family=Roboto:700');
 @keyframes showTopText {
   0% { transform: translate3d(0, 100%, 0); }
@@ -243,6 +244,12 @@ blockquote p {
   max-width: 140px;
 }
 
+.domainText {
+  font-size: 12px;
+
+}
+
+/* breakpoint modifications */
 @media only screen and (max-width: 600px) {
   .animated-title {
     color: rgb(0, 0, 0);
@@ -279,5 +286,34 @@ blockquote p {
   .postTitleURL:link {
     font-size: 1.1rem;
   }
+
+  .posts {
+    padding: 0rem 0rem;
+  }
+
+  .domainText {
+    font-size: 10px;
+    inline-size: 100px;
+    overflow-wrap: break-word;
+  }
+
+}
+
+/* temp fix for panel sizing during breakpoints */
+@media only screen and (max-width: 1280px) {
+  .posts {
+    padding: 1rem 5rem;
+  }
+}
+
+
+@media only screen and (max-width: 1115px) {
+  .posts {
+    padding: 1rem 1rem;
+  }
+}
+
+
+@media only screen and (max-width: 417) {
 
 }
