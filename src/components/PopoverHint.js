@@ -2,20 +2,20 @@ import React, { useEffect } from "react";
 import Popover from "@material-ui/core/Popover";
 import Typography from "@material-ui/core/Typography";
 
-export default function SimplePopover() {
+export default function SimplePopover(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const divRef = React.useRef();
 
 
-  function handleClose() {
-    setAnchorEl(null);
-  }
+  // function handleClose() {
+  //   setAnchorEl(null)
+  // }
 
   useEffect(() => {
     setAnchorEl(divRef.current);
   }, [divRef]);
 
-  const open = Boolean(anchorEl);
+  let open = props.subNotFound;
   const id = open ? "simple-popover" : undefined;
 
   return (
@@ -23,19 +23,19 @@ export default function SimplePopover() {
       <Typography ref={divRef}></Typography>
       <Popover
         id={id}
-        open={open}
+        open={props.subNotFound}
         anchorEl={anchorEl}
-        onClose={handleClose}
+        onClose={props.handleClose}
         anchorOrigin={{
           vertical: "bottom",
-          horizontal: "left"
+          horizontal: "center"
         }}
         transformOrigin={{
           vertical: "top",
           horizontal: "center"
         }}
       >
-        <Typography>Click on arrow to expand comments</Typography>
+        <Typography>Subreddit not found</Typography>
       </Popover>
     </div>
   );

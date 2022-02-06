@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
+import PopoverHint from './PopoverHint';
 import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
@@ -77,6 +77,7 @@ const styles = theme => ({
 
 function SearchAppBar(props) {
   const { classes } = props;
+
   return (
     <div className={classes.root}>
       <AppBar className={classes.appBar} position="static">
@@ -97,7 +98,7 @@ function SearchAppBar(props) {
 
           {/* <Typography className={classes.title} variant="h5" color="inherit" noWrap> */}
 
-            <div onClick={console.log('clicked logo')}>
+            <div>
               <div className='animated-title'>
                 <div className='text-top'>
                   <div>
@@ -124,6 +125,7 @@ function SearchAppBar(props) {
                 input: classes.inputInput,
               }}
             />
+            <PopoverHint subNotFound={props.subNotFound} handleClose={props.handleClose}/>
           </div>
         </Toolbar>
       </AppBar>

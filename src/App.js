@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Posts from './components/Posts';
 // import PopoverHint from './components/PopoverHint'
-import SubredditChoice from './components/SubredditChoice';
+import PopoverHint from './components/PopoverHint';
 import snoowrap from 'snoowrap';
 import './App.css';
 import InfiniteScroll from 'react-infinite-scroller';
@@ -27,15 +27,17 @@ class App extends Component {
 
   state = {
     posts: [],
-    subreddit: 'All' //subreddit will default to frontpage if not selected by user
+    subreddit: 'All', //subreddit will default to frontpage if not selected by user
+    subNotFound: false,
   }
 
   loadPosts = (sub) => {
     r.getHot(sub).then(result => {
       this.setState({ posts: Array.from(result) }) // temporary fix due to returned proxy object from snoowrap
       console.log(this.state.posts)
-    });
-
+    }, () => {
+      this.setState({subNotFound: true})
+    })
   }
 
   handleClick = event => {
@@ -48,6 +50,11 @@ class App extends Component {
       this.setState({ subreddit: event.target.value });
       this.loadPosts(event.target.value);
     }
+  }
+
+  handleClose = () => {
+    this.setState({subNotFound: false})
+    console.log('handled close of popover')
   }
 
   subredditClick = event => {
@@ -88,7 +95,7 @@ class App extends Component {
     const loader = <div className='loader'>Loading posts...</div>
     return (
         <div className='posts'>
-          <AppBar handleClick={this.handleClick} handleEnter={this.handleEnter} subredditClick={this.subredditClick} currentSub={this.state.subreddit}/>
+          <AppBar handleClick={this.handleClick} handleEnter={this.handleEnter} subredditClick={this.subredditClick} currentSub={this.state.subreddit} subNotFound={this.state.subNotFound} handleClose={this.handleClose}/>
           <InfiniteScroll
             pageStart={0}
             loadMore={this.loadMore}
