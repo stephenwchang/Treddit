@@ -39,33 +39,6 @@ const useStyles = makeStyles(theme => ({
     marginRight: '10px',
     display: 'inline',
   },
-  numComments: {
-    '&:hover': { cursor: 'pointer', textDecoration: 'underline' },
-    color: "#808080",
-    fontSize: '14px',
-
-  },
-  score: {
-    color: 'green',
-  },
-  commentData: {
-    // display: 'flex',
-  },
-  authorText: {
-    color: '#A55858',
-    fontSize: '14px',
-    marginRight: '10px',
-  },
-  subredditText: {
-    color: '#0000EE',
-    fontSize: '14px',
-   '&:hover': { cursor: 'pointer', textDecoration: 'underline' },
-  },
-  createdText: {
-    fontSize: '14px',
-    fontStyle: 'italic',
-    marginLeft: '5px',
-  }
 }));
 
 const IconLeftExpansionPanelSummary = withStyles({
@@ -112,20 +85,18 @@ export default function PostItem(props) {
                 <Grid item xs container direction="column" spacing={1}>
                   <Grid item>
                       <a className='postTitleURL' href={props.url} target='_blank' rel='noopener noreferrer'>{props.title}</a>
-                      <span className={classes.createdText}>{props.convertTime(props.created)}</span>
-                    <div className={classes.commentData}>
-                      <div className={classes.authorText}>{props.author}</div>
-                      {/* <div style={{ marginRight: '10px'}}>{props.domain}</div> */}
+                      <span className='createdText'>{props.convertTime(props.created)}</span>
+                    <div className='commentData'>
+                      <div className='authorText'>{props.author}</div>
                       <div
-                        className={classes.subredditText}
+                        className='subredditText'
                         onClick={() => {
                           props.subredditClick(props.subreddit.substring(2))
                         }}
                       >{props.subreddit}</div>
-                    {/* <div className={classes.createdText}>{props.convertTime(props.created)}</div> */}
                     </div>
 
-                    <div className={classes.numComments}>{props.num_comments} comments</div>
+                    <div className='numComments'>{props.num_comments} comments</div>
                   </Grid>
                 </Grid>
             </Grid>

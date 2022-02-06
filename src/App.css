@@ -247,7 +247,41 @@ blockquote p {
 
 .domainText {
   font-size: 12px;
+}
 
+.commentData {
+  display: flex;
+}
+
+.subredditText {
+  color: #0000EE;
+  font-size: 12px;
+}
+.subredditText:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.createdText {
+  font-size: 12px;
+  font-style: italic;
+  margin-left: 5px;
+}
+
+.authorText {
+  color: #A55858;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.numComments {
+  color: #808080;
+  font-size: 12px;
+}
+
+.numComments:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 /* breakpoint modifications */
@@ -296,6 +330,26 @@ blockquote p {
     font-size: 10px;
     inline-size: 100px;
     overflow-wrap: break-word;
+  }
+
+  .commentData {
+    display: inline;
+  }
+
+  .subredditText {
+    font-size: 10px;
+  }
+
+  .createdText {
+    font-size: 10px;
+  }
+
+  .authorText {
+    font-size: 10px;
+  }
+
+  .numComments {
+    font-size: 10px;
   }
 
 }
