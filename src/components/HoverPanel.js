@@ -11,7 +11,9 @@ const styles = theme => ({
     backgroundColor: 'rgb(104, 151, 187, .8)',
     opacity: '.7',
     padding: 0,
-    margin: 0,
+    paddingLeft: '10px',
+    paddingRight: '10px',
+    margin: 5,
     '&:hover': { cursor: 'pointer'},
   }
 });
