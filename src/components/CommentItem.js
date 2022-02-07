@@ -37,6 +37,7 @@ const useStyles = makeStyles(theme => ({
   commentAuthor: {
     color: '#A55858',
     fontSize: '12px',
+    bottomPadding: "0",
   },
   createdText: {
     fontStyle: 'italic',
@@ -93,13 +94,8 @@ export default function CommentItem(props) {
         <Grid item xs={12} sm container>
           <Grid item xs container direction="column" spacing={16}>
             <Grid item xs>
-
-              {/* <Typography className={classes.heading}> */}
                 <div className={classes.commentAuthor}>{props.authorName}</div>
-                <div dangerouslySetInnerHTML={{ __html: props.bodyHtml }}>
-                </div>
-              {/* </Typography> */}
-              {/* <div className={classes.commentData}>{props.author} • {props.domain} • {props.subreddit}</div> */}
+                <div dangerouslySetInnerHTML={{ __html: props.bodyHtml }}></div>
               <div className={classes.numReplies}>{(props.replies.length > 0 ) ? props.replies.length : 'No'} {(props.replies.length === 1) ?  'reply' :  'replies'}</div>
             </Grid>
 
