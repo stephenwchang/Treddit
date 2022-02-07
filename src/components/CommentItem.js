@@ -32,13 +32,15 @@ const useStyles = makeStyles(theme => ({
     '&:hover': { cursor: 'pointer', textDecoration: 'underline' },
     color: '#0000EE',
     opacity: '0.8',
+    fontSize: '12px',
   },
   commentAuthor: {
     color: '#A55858',
+    fontSize: '12px',
   },
   createdText: {
     fontStyle: 'italic',
-    fontSize: '14px',
+    fontSize: '12px',
   }
 }));
 
@@ -110,9 +112,9 @@ export default function CommentItem(props) {
         </Grid>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
-        <Typography component={'span'} variant={'body2'}>
+        <div component={'span'} variant={'body2'}>
           {renderReplies()}
-        </Typography>
+        </div>
       </ExpansionPanelDetails>
     </ExpansionPanel>
     </div>
