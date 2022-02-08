@@ -48,6 +48,12 @@ const useStyles = makeStyles(theme => ({
   },
   commentText: {
     fontSize: '12px',
+    madWidth: '100%',
+  },
+  commentDataContainer: {
+    // overflowX: 'scroll',
+    // width: 'auto',
+    // whiteSpace: 'wrap',
   }
 }));
 
@@ -111,10 +117,10 @@ export default function CommentItem(props) {
         </Grid>
         <Grid item xs={12} sm container>
           <Grid item xs container direction="column" spacing={16}>
-            <Grid item xs>
+            <Grid className={classes.commentDataContainer}item xs>
                 <div className={classes.commentAuthor}>{props.authorName}</div>
                 <div className={classes.createdText}>{props.convertTime(props.created)}</div>
-                <div className={classes.commentText}dangerouslySetInnerHTML={{ __html: props.bodyHtml }}></div>
+                <div className={classes.commentText} dangerouslySetInnerHTML={{ __html: props.bodyHtml }}></div>
                 <div className={classes.numReplies}>{(props.replies.length > 0 ) ? props.replies.length : 'No'} {(props.replies.length === 1) ?  'reply' :  'replies'}</div>
             </Grid>
 

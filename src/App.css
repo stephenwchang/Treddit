@@ -306,7 +306,7 @@ blockquote p {
 }
 
 .MuiSnackbar-anchorOriginBottomCenter {
-  bottom: 0!important;
+  bottom: 5px!important;
 }
 
 

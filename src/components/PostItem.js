@@ -38,6 +38,13 @@ const useStyles = makeStyles(theme => ({
     marginRight: '10px',
     display: 'inline',
   },
+  selfTextContainer: {
+    overflowX: 'scroll',
+    width: 'auto',
+    whiteSpace: 'wrap',
+
+
+  }
 }));
 
 //move expandIcon to left
@@ -103,7 +110,9 @@ export default function PostItem(props) {
             </IconLeftExpansionPanelSummary>
           <ExpansionPanelDetails>
             <Typography component={'span'} variant={'body2'}>
-            <SelfText selftext={props.selftext}/>
+            <div className={classes.selfTextContainer}>
+              <SelfText className={classes.selfText} selftext={props.selftext}/>
+            </div>
             <Comments id={props.id} convertTime={props.convertTime}/>
             </Typography>
           </ExpansionPanelDetails>
