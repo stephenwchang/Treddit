@@ -344,7 +344,7 @@ blockquote p {
     font-size: 8px;
     color: white;
     animation-delay: 1.5s;
-    animation-fil-mode: forwards;
+    animation-fill-mode: forwards;
     top: 53px;
     left: 85px;
     bottom: -40px;
