@@ -40,11 +40,10 @@ const useStyles = makeStyles(theme => ({
   },
   selfTextContainer: {
     overflowX: 'auto',
+    margin: '0 20px 0 20px',
+    fontSize: '12px',
     // width: 'auto',
   },
-  selfText: {
-    fontWeight: 300,
-  }
 }));
 
 //move expandIcon to left
