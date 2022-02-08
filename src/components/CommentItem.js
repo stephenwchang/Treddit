@@ -51,6 +51,7 @@ const useStyles = makeStyles(theme => ({
     madWidth: '100%',
   },
   commentDataContainer: {
+    lineHeight: 'normal',
     // overflowX: 'scroll',
     // width: 'auto',
     // whiteSpace: 'wrap',
