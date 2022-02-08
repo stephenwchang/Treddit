@@ -83,15 +83,16 @@ blockquote p {
   padding: 1rem 10rem;
 }
 
-.postTitleURL:link {
+.postTitleURL {
   text-decoration: none;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  font-weight: 400;
 }
 
 
 .postTitleURL:hover {
-  cursor: pointer;
-  text-decoration: underline;
+  /* cursor: pointer;
+  text-decoration: underline; */
 
 }
 
@@ -242,7 +243,7 @@ blockquote p {
 }
 
 .postThumbnail {
-  max-width: 140px;
+  max-width: 100px;
   border-radius: 5px;
 }
 
@@ -346,10 +347,10 @@ blockquote p {
   }
 
   .postThumbnail {
-    max-width: 100px;
+    max-width: 80px;
   }
 
-  .postTitleURL:link {
+  .postTitleURL {
     font-size: 1.1rem;
   }
 
