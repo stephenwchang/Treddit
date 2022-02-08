@@ -6,13 +6,12 @@ import Snackbar from "@material-ui/core/Snackbar";
 
 const styles = theme => ({
   content: {
-    minWidth: 80,
-    minHeight: 20,
-    backgroundColor: 'rgb(104, 151, 187, .8)',
-    opacity: '.7',
+    minWidth: 100,
+    maxHeight: 20,
+    backgroundColor: 'rgb(104, 151, 187, .7)',
     padding: 0,
-    paddingLeft: '10px',
-    paddingRight: '10px',
+    paddingLeft: '5px',
+    paddingRight: '5px',
     margin: 5,
     '&:hover': { cursor: 'pointer'},
   }
@@ -53,7 +52,12 @@ class HoverPanel extends React.Component {
             "aria-describedby": "message-id",
             className: classes.content
           }}
-          message={<span id="message-id">r/{this.props.currentSub}</span>}
+          message={
+                      // <div><img style={{maxHeight: 20, opacity: .5}} src='https://nejcslovnik.com/wp-content/uploads/2015/06/scroll-top.png' alt=''/>
+                        <span id="message-id">return to top</span>
+                      // </div>
+                  }
+
         />
       </div>
     );
