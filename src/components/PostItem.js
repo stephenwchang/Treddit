@@ -41,6 +41,9 @@ const useStyles = makeStyles(theme => ({
   selfTextContainer: {
     overflowX: 'auto',
     // width: 'auto',
+  },
+  selfText: {
+    fontWeight: 300,
   }
 }));
 

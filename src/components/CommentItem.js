@@ -41,10 +41,10 @@ const useStyles = makeStyles(theme => ({
     // display: 'inline',
   },
   createdText: {
-    fontStyle: 'italic',
     fontSize: '10px',
     display: 'inline',
     float: 'right',
+    color: 'black',
   },
   commentText: {
     fontSize: '12px',
@@ -119,8 +119,10 @@ export default function CommentItem(props) {
         {/* <Grid item xs={6} sm container> */}
           {/* <Grid item xs container direction="column" spacing={16}> */}
             <Grid className={classes.commentDataContainer}item xs>
-                <div className={classes.commentAuthor}>{props.authorName}</div>
-                <div className={classes.createdText}>{props.convertTime(props.created)}</div>
+                <div className={classes.commentAuthor}>
+                  {props.authorName}
+                  <span className={classes.createdText}>{props.convertTime(props.created)}</span>
+                </div>
                 <div className={classes.commentText} dangerouslySetInnerHTML={{ __html: props.bodyHtml }}></div>
                 <div className={classes.numReplies}>{(props.replies.length > 0 ) ? props.replies.length : 'No'} {(props.replies.length === 1) ?  'reply' :  'replies'}</div>
             </Grid>
