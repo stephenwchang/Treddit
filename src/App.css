@@ -67,11 +67,11 @@ blockquote p {
 
 /* set proper padding between comments */
 .MuiExpansionPanelDetails-root {
-  padding: 0px 5px 15px 24px!important;
+  padding: 0px 5px 15px 10px!important;
 }
 
 /* .MuiExpansionPanelSummary-root {
-  padding: 0px 5px 15px 24px!important;
+  padding: 0px 0px 0px 20px!important;
 } */
 
 
