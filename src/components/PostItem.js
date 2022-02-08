@@ -68,7 +68,7 @@ export default function PostItem(props) {
           <IconLeftExpansionPanelSummary
             className={classes.panel}
             style={{padding: '1px'}}
-            onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
+            // onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
             expandIcon={
               <Tooltip title={expansionPanelOpen ? "Collapse comment section" : "Expand comment section"}>
                 <ExpandMoreIcon
@@ -91,8 +91,8 @@ export default function PostItem(props) {
               {/* <Grid item xs={7} md={10} container> */}
                 <Grid item xs container direction="column" spacing={1}>
                   <Grid item>
-                      <a className='postTitleURL' href={props.url} target='_blank' rel='noopener noreferrer'>{props.title}</a>
-                      <span className='createdText'>{props.convertTime(props.created)}</span>
+                    <a className='postTitleURL' href={props.url} target='_blank' rel='noopener noreferrer'>{props.title}</a>
+                    <span className='createdText'>{props.convertTime(props.created)}</span>
                     <div className='commentData'>
                       <div className='authorText'>{props.author}</div>
                       <div
@@ -102,8 +102,7 @@ export default function PostItem(props) {
                         }}
                       >{props.subreddit}</div>
                     </div>
-
-                    <div className='numComments'>{props.num_comments} comments</div>
+                    <div onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}} className='numComments'>{props.num_comments} comments</div>
                   </Grid>
                 </Grid>
             </Grid>
