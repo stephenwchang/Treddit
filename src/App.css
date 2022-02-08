@@ -300,6 +300,10 @@ blockquote p {
   margin-right: auto;
 }
 
+.commentText {
+  font-size: 12px;
+}
+
 
 /* breakpoint modifications */
 @media only screen and (max-width: 600px) {

@@ -95,7 +95,7 @@ export default function CommentItem(props) {
           <Grid item xs container direction="column" spacing={16}>
             <Grid item xs>
                 <div className={classes.commentAuthor}>{props.authorName}</div>
-                <div dangerouslySetInnerHTML={{ __html: props.bodyHtml }}></div>
+                <div className='commentText' dangerouslySetInnerHTML={{ __html: props.bodyHtml }}></div>
               <div className={classes.numReplies}>{(props.replies.length > 0 ) ? props.replies.length : 'No'} {(props.replies.length === 1) ?  'reply' :  'replies'}</div>
             </Grid>
 
