@@ -40,10 +40,7 @@ const useStyles = makeStyles(theme => ({
   },
   selfTextContainer: {
     overflowX: 'auto',
-    width: 'auto',
-    whiteSpace: 'pre',
-
-
+    // width: 'auto',
   }
 }));
 
