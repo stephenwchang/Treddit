@@ -38,7 +38,7 @@ const useStyles = makeStyles(theme => ({
     color: '#A55858',
     fontSize: '10px',
     bottomPadding: "0",
-    display: 'inline',
+    // display: 'inline',
   },
   createdText: {
     fontStyle: 'italic',
@@ -107,17 +107,17 @@ export default function CommentItem(props) {
         aria-controls="panel1a-content"
         id="panel1a-header"
       >
-        <Grid
+        {/* <Grid
         container spacing={16}
         direction="row"
         justifyContent="center"
         alignItems="center"
-        >
+        > */}
         <Grid item>
 {/* possibly include user avatar here */}
         </Grid>
-        <Grid item xs={12} sm container>
-          <Grid item xs container direction="column" spacing={16}>
+        {/* <Grid item xs={6} sm container> */}
+          {/* <Grid item xs container direction="column" spacing={16}> */}
             <Grid className={classes.commentDataContainer}item xs>
                 <div className={classes.commentAuthor}>{props.authorName}</div>
                 <div className={classes.createdText}>{props.convertTime(props.created)}</div>
@@ -125,9 +125,9 @@ export default function CommentItem(props) {
                 <div className={classes.numReplies}>{(props.replies.length > 0 ) ? props.replies.length : 'No'} {(props.replies.length === 1) ?  'reply' :  'replies'}</div>
             </Grid>
 
-            </Grid>
-          </Grid>
-        </Grid>
+            {/* </Grid> */}
+          {/* </Grid> */}
+        {/* </Grid> */}
         </IconLeftExpansionPanelSummary>
         <ExpansionPanelDetails>
         <Typography component={'span'} variant={'body2'}>
