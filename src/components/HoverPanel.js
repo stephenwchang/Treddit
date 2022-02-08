@@ -6,14 +6,15 @@ import Snackbar from "@material-ui/core/Snackbar";
 
 const styles = theme => ({
   content: {
-    minWidth: 100,
-    maxHeight: 20,
+    minWidth: 80,
+    minHeight: 20,
     backgroundColor: 'rgb(104, 151, 187, .7)',
     padding: 0,
     paddingLeft: '5px',
     paddingRight: '5px',
     margin: 5,
     '&:hover': { cursor: 'pointer'},
+    fontSize: '11px',
   }
 });
 

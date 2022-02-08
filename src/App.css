@@ -173,7 +173,6 @@ blockquote p {
 
 .grid-root {
   font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-
 }
 
 /* animate logo */
@@ -299,11 +298,19 @@ blockquote p {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding:0!important;
 }
 
 .MuiExpansionPanelSummary-content {
   margin: 6px;
 }
+
+.MuiSnackbar-anchorOriginBottomCenter {
+  bottom: 0!important;
+}
+
+
+
 
 /* breakpoint modifications */
 @media only screen and (max-width: 600px) {
@@ -373,6 +380,10 @@ blockquote p {
     font-size: 11px;
   }
 
+  .MuiSnackbar-root {
+    left: 200px!important;
+    right: 200px!important;
+  }
 }
 
 /* temp fix for panel sizing during breakpoints */
