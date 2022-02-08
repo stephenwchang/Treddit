@@ -43,6 +43,7 @@ const useStyles = makeStyles(theme => ({
     fontSize: '12px',
     background: '#F3F4F6',
     padding: '0 10px 0 10px',
+    borderRadius: '3px',
     // width: 'auto',
   },
 }));
