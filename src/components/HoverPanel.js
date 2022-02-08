@@ -7,7 +7,7 @@ import Snackbar from "@material-ui/core/Snackbar";
 const styles = theme => ({
   content: {
     minWidth: 80,
-    minHeight: 20,
+    minHeight: 30,
     backgroundColor: 'rgb(104, 151, 187, .7)',
     padding: 0,
     paddingLeft: '5px',

@@ -381,8 +381,8 @@ blockquote p {
   }
 
   .MuiSnackbar-root {
-    left: 200px!important;
-    right: 200px!important;
+    left: 50%!important;
+    right: 50%!important;
   }
 }
 
