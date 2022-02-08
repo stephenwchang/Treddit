@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, withStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
@@ -32,19 +32,37 @@ const useStyles = makeStyles(theme => ({
     '&:hover': { cursor: 'pointer', textDecoration: 'underline' },
     color: '#0000EE',
     opacity: '0.8',
-    fontSize: '12px',
+    fontSize: '10px',
   },
   commentAuthor: {
     color: '#A55858',
-    fontSize: '12px',
+    fontSize: '10px',
     bottomPadding: "0",
+    display: 'inline',
   },
   createdText: {
     fontStyle: 'italic',
+    fontSize: '10px',
+    display: 'inline',
+    float: 'right',
+  },
+  commentText: {
     fontSize: '12px',
   }
 }));
 
+  //move expandIcon to left
+  const IconLeftExpansionPanelSummary = withStyles({
+    expandIcon: {
+        order: -1,
+        marginRight: 0,
+        maxWidth: '6px',
+        // paddingLeft: '4px',
+    },
+    expandLess: {
+      paddingLeft: '4px',
+    }
+  })(ExpansionPanelSummary);
 
 export default function CommentItem(props) {
   // recursively generate comments until end of replies
@@ -58,24 +76,24 @@ export default function CommentItem(props) {
   }
 
   const classes = useStyles();
-
   // expand only up to a depth of 5 comments by default
-  const expanded = props.replies[0] ? props.depth < 6 ? true : props.depth > 6 ? true : false : false;
+  // const expanded = props.replies[0] ? props.depth < 6 ? true : props.depth > 6 ? true : false : false;
   // manually control and set expansion state
-  const [expansionPanelOpen, setExpansionPanelOpen] = useState(!expanded);
+  const [expansionPanelOpen, setExpansionPanelOpen] = useState(false);
   // render icon only if expandable/collapsible
   const iconRender = props.replies[0] ?
   <Tooltip title={expansionPanelOpen ? "Collapse comment thread" : "Expand comment thread"}>
     <ExpandMoreIcon style={{padding: '0px'}} onClick={() => {
       setExpansionPanelOpen(!expansionPanelOpen)
     }}/>
-  </Tooltip>
-    : <ExpandMoreIcon style={{visibility: 'hidden'}}/>; //temporary fix to align timestamp
+  </Tooltip> : <span style={{width: '4px'}}></span>
+    // : <ExpandMoreIcon style={{visibility: 'hidden'}}/>; //temporary fix to align timestamp
 
   return (
     <div className='grid-root'>
-      <ExpansionPanel defaultExpanded={expanded} expanded={expansionPanelOpen} TransitionProps={{ unmountOnExit: true }}>
-      <ExpansionPanelSummary
+      <ExpansionPanel defaultExpanded={false} expanded={expansionPanelOpen} TransitionProps={{ unmountOnExit: true }}>
+      <IconLeftExpansionPanelSummary
+        IconButtonProps={{edge: 'start'}}
         className = {classes.panel}
         onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
         expandIcon={iconRender}
@@ -95,22 +113,19 @@ export default function CommentItem(props) {
           <Grid item xs container direction="column" spacing={16}>
             <Grid item xs>
                 <div className={classes.commentAuthor}>{props.authorName}</div>
-                <div dangerouslySetInnerHTML={{ __html: props.bodyHtml }}></div>
-              <div className={classes.numReplies}>{(props.replies.length > 0 ) ? props.replies.length : 'No'} {(props.replies.length === 1) ?  'reply' :  'replies'}</div>
-            </Grid>
-
-            </Grid>
-            <Grid item>
                 <div className={classes.createdText}>{props.convertTime(props.created)}</div>
+                <div className={classes.commentText}dangerouslySetInnerHTML={{ __html: props.bodyHtml }}></div>
+                <div className={classes.numReplies}>{(props.replies.length > 0 ) ? props.replies.length : 'No'} {(props.replies.length === 1) ?  'reply' :  'replies'}</div>
+            </Grid>
 
             </Grid>
           </Grid>
         </Grid>
-        </ExpansionPanelSummary>
+        </IconLeftExpansionPanelSummary>
         <ExpansionPanelDetails>
-        <div component={'span'} variant={'body2'}>
+        <Typography component={'span'} variant={'body2'}>
           {renderReplies()}
-        </div>
+        </Typography>
       </ExpansionPanelDetails>
     </ExpansionPanel>
     </div>

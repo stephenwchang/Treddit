@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   },
   panel: {
     '&:hover': { background: '#F3F4F6'},
-    margin: '3px',
+    margin: '1px',
     '&:active': {
       backgroundColor: '#EDEFF2',
       boxShadow: 'rgba(225, 228, 232, 0.2) 0 1px 0 inset',
@@ -40,11 +40,12 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+//move expandIcon to left
 const IconLeftExpansionPanelSummary = withStyles({
     expandIcon: {
         order: -1,
         marginRight: 0,
-    }
+    },
 })(ExpansionPanelSummary);
 
 
@@ -64,7 +65,7 @@ export default function PostItem(props) {
             expandIcon={
               <Tooltip title={expansionPanelOpen ? "Collapse comment section" : "Expand comment section"}>
                 <ExpandMoreIcon
-                  style={{padding: '0px'}}
+                  style={{}}
                   onClick={() => {setExpansionPanelOpen(!expansionPanelOpen)}}
                 >
                 </ExpandMoreIcon>

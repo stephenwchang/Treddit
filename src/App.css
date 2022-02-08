@@ -111,6 +111,7 @@ blockquote p {
   text-align: center;
   font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-weight: 300;
+  font-size: 12px;
 
 }
 .expandComments {
@@ -300,7 +301,9 @@ blockquote p {
   margin-right: auto;
 }
 
-
+.MuiExpansionPanelSummary-content {
+  margin: 6px;
+}
 
 /* breakpoint modifications */
 @media only screen and (max-width: 600px) {
