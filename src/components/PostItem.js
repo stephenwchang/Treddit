@@ -39,9 +39,9 @@ const useStyles = makeStyles(theme => ({
     display: 'inline',
   },
   selfTextContainer: {
-    overflowX: 'scroll',
+    overflowX: 'auto',
     width: 'auto',
-    whiteSpace: 'wrap',
+    whiteSpace: 'pre',
 
 
   }
