@@ -98,7 +98,7 @@ class App extends Component {
     return (
         <div className='posts'>
           <HoverPanel currentSub={this.state.subreddit}/>
-          <AppBar handleClick={this.handleClick} handleEnter={this.handleEnter} subredditClick={this.subredditClick} currentSub={this.state.subreddit} subNotFound={this.state.subNotFound} handleClose={this.handleClose}/>
+          <AppBar subredditClick={this.subredditClick} handleEnter={this.handleEnter} subredditClick={this.subredditClick} currentSub={this.state.subreddit} subNotFound={this.state.subNotFound} handleClose={this.handleClose}/>
           <InfiniteScroll
             pageStart={0}
             loadMore={this.loadMore}

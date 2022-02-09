@@ -87,7 +87,7 @@ function SearchAppBar(props) {
           {/* <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
             <MenuIcon />
           </IconButton> */}
-          <img
+          <img className='tredditorLogo' onClick={() => props.subredditClick('all')}
             src={'https://i.redd.it/m1pd3gtxch431.jpg'}
             style={{
                 height:'45px',
@@ -100,7 +100,7 @@ function SearchAppBar(props) {
 
           {/* <Typography className={classes.title} variant="h5" color="inherit" noWrap> */}
 
-            <div>
+            <div className='tredditorLogoContainer' onClick={() => console.log('clicked logo')}>
               <div className='animated-title'>
                 <div className='text-top'>
                   <div>
