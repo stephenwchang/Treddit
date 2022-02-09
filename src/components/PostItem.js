@@ -99,12 +99,13 @@ export default function PostItem(props) {
                       <div className='authorText'>{props.author}</div>
                       <div
                         className='subredditText'
-                        onClick={() => {
+                        onClick={(e) => {
+                          e.stopPropagation()
                           props.subredditClick(props.subreddit.substring(2))
                         }}
                       >{props.subreddit}</div>
                     </div>
-                    <div className='numComments'>{props.num_comments} comments</div>
+                    <span className='numComments'>{props.num_comments} comments</span>
                   </Grid>
                 </Grid>
             </Grid>
