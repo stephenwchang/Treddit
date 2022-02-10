@@ -43,7 +43,7 @@ export class Comments extends Component {
           body={comment.body}
           convertTime={this.props.convertTime}
         />
-      ));
+      )).filter((x, i) => { return i < 5}) //display only first 5 comments
     }
     else {
       return <div className='loadingComments'> Loading comments...</div>

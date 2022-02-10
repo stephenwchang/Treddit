@@ -10,6 +10,7 @@ import { withStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import MenuItem from '@material-ui/core/MenuItem';
+import Grid from '@material-ui/core/Grid';
 
 
 const styles = theme => ({
@@ -112,6 +113,7 @@ function SearchAppBar(props) {
                   </div>
               </div>
             </div>
+          {/* <div className='currentSubHeading'>{props.currentSub}</div> */}
 
           {/* </Typography> */}
           <div className={classes.grow} />
