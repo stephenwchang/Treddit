@@ -314,6 +314,13 @@ blockquote p {
 
 .MuiExpansionPanelSummary-content {
   margin: 6px;
+  overflow-wrap: anywhere!important;
+  max-width: 100%;
+}
+
+.makeStyles-commentText-24 img {
+  max-width: 100%;
+  height: auto;
 }
 
 .MuiSnackbar-anchorOriginBottomCenter {
