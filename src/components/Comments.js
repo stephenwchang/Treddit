@@ -15,7 +15,7 @@ export class Comments extends Component {
 
   state = {
     comments: [],
-
+    moreCommentsLoaded: false,
   }
 
   renderComments = (id) => {
@@ -25,13 +25,18 @@ export class Comments extends Component {
     });
   }
 
+  loadMoreComments =() => {
+   this.setState({ moreCommentsLoaded: !this.state.moreCommentsLoaded })
+  }
+
   componentDidMount() {
     this.renderComments(this.props.id);
   }
 
   render() {
     if (this.state.comments.length > 0) {
-      return this.state.comments.map((comment) => (
+      return [
+        this.state.comments.map((comment) => (
         <CommentItem
           key={comment.id}
           depth={comment.depth}
@@ -44,6 +49,22 @@ export class Comments extends Component {
           convertTime={this.props.convertTime}
         />
       )).filter((x, i) => { return i < 5}) //display only first 5 comments
+         ,
+        !this.state.moreCommentsLoaded ? <div className='loadAllComments' onClick={this.loadMoreComments}>Show all comments</div>
+        :
+        this.state.comments.map((comment) => (
+          <CommentItem
+            key={comment.id}
+            depth={comment.depth}
+            authorName={comment.author.name}
+            replies={comment.replies}
+            score={comment.score}
+            created={comment.created}
+            bodyHtml={comment.body_html}
+            body={comment.body}
+            convertTime={this.props.convertTime}
+          />
+        )).filter((x, i) => { return i > 4})]
     }
     else {
       return <div className='loadingComments'> Loading comments...</div>

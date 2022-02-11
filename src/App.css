@@ -116,6 +116,7 @@ blockquote p {
   font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-weight: 300;
   font-size: 12px;
+  padding-top: 6px;
 
 }
 .expandComments {
@@ -326,6 +327,17 @@ blockquote p {
 .currentSubHeading {
   margin: auto;
 
+}
+
+.loadAllComments {
+  text-align: center;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-weight: 300;
+  font-size: 12px;
+  padding-top: 6px;
+}
+.loadAllComments:hover {
+  cursor: pointer;
 }
 
 
