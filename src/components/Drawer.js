@@ -121,6 +121,9 @@ class ResponsiveDrawer extends React.Component {
             <Typography variant="h6" color="inherit" noWrap>
               Tredditor
             </Typography>
+            <Typography style={{ marginLeft: 'auto', }}>
+              r/{this.props.currentSub}
+            </Typography>
           </Toolbar>
         </AppBar>
         {/* <AppBar subredditClick={this.props.subredditClick} handleEnter={this.props.handleEnter} currentSub={this.props.currentSub} subNotFound={this.props.subNotFound} handleClose={this.props.handleClose} /> */}
