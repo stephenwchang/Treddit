@@ -108,11 +108,22 @@ class ResponsiveDrawer extends React.Component {
             >
               <MenuIcon />
             </IconButton>
+            <img className='tredditorLogo' onClick={() => this.props.subredditClick('all')}
+            src={'https://i.redd.it/m1pd3gtxch431.jpg'}
+            style={{
+                height:'45px',
+                width: '45px',
+                borderRadius: '20px',
+                marginRight: '10px',
+              }}
+            alt={''}
+          />
             <Typography variant="h6" color="inherit" noWrap>
               Tredditor
             </Typography>
           </Toolbar>
         </AppBar>
+        {/* <AppBar subredditClick={this.props.subredditClick} handleEnter={this.props.handleEnter} currentSub={this.props.currentSub} subNotFound={this.props.subNotFound} handleClose={this.props.handleClose} /> */}
         <nav className={classes.drawer}>
           {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
           <Hidden smUp implementation="css">
