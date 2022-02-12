@@ -81,8 +81,12 @@ blockquote p {
   color: grey;
 }
 
-.posts {
-  padding: 1rem 10rem;
+.ResponsiveDrawer-content-7 {
+  padding: 0!important;
+}
+
+.MuiGrid-grid-xs-true {
+  padding-right: 3px!important;
 }
 
 .postTitleURL {
@@ -99,13 +103,14 @@ blockquote p {
 }
 
 @media only screen and (max-width: 768px) {
-  .posts {
+  /* .posts {
     padding: 10px 10px;
-  }
+  } */
 }
 
 .loader {
   margin-top: .5rem;
+  padding-left: .5rem;
   font-size: 14px;
 }
 
@@ -387,7 +392,7 @@ blockquote p {
   }
 
   .posts {
-    padding: 0rem 0rem;
+    /* padding: 0rem 0.5rem!important; */
   }
 
   .domainText {
@@ -425,14 +430,14 @@ blockquote p {
 /* temp fix for panel sizing during breakpoints */
 @media only screen and (max-width: 1280px) {
   .posts {
-    padding: 1rem 5rem;
+    /* padding: 1rem 5rem; */
   }
 }
 
 
 @media only screen and (max-width: 1115px) {
   .posts {
-    padding: 1rem 1rem;
+    /* padding: 0rem 0.5rem; */
   }
 }
 

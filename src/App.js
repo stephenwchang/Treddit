@@ -7,7 +7,8 @@ import './App.css';
 import InfiniteScroll from 'react-infinite-scroller';
 import AppBar from './components/AppBar';
 import moment from 'moment';
-import HoverPanel from './components/HoverPanel'
+import HoverPanel from './components/HoverPanel';
+import Drawer from './components/Drawer';
 
 moment().format();
 
@@ -94,23 +95,36 @@ class App extends Component {
   }
 
   render() {
-    const loader = <div className='loader'>Loading posts...</div>
+    // const loader = <div className='loader'>Loading posts...</div>
     return (
-        <div className='posts'>
+      <>
+        <Drawer
+        subredditClick={this.subredditClick}
+        handleEnter={this.handleEnter}
+        currentSub={this.state.subreddit}
+        subNotFound={this.state.subNotFound}
+        handleClose={this.handleClose}
+        loadMore={this.loadMore}
+        posts={this.state.posts}
+        comments={this.state.comments}
+        renderComments={this.renderComments}
+        convertTime={this.convertTime}/>
+
+        {/* <div className='posts'>
           <HoverPanel currentSub={this.state.subreddit}/>
-          <AppBar subredditClick={this.subredditClick} handleEnter={this.handleEnter} subredditClick={this.subredditClick} currentSub={this.state.subreddit} subNotFound={this.state.subNotFound} handleClose={this.handleClose}/>
+          <AppBar subredditClick={this.subredditClick} handleEnter={this.handleEnter} currentSub={this.state.subreddit} subNotFound={this.state.subNotFound} handleClose={this.handleClose}/>
           <InfiniteScroll
             pageStart={0}
             loadMore={this.loadMore}
             hasMore={true}
             loader={loader}
           >
-            {/* <SubredditChoice handleChange={this.handleChange} handleEnter={this.handleEnter} currentSub={this.state.subreddit} /> */}
-            {/* <PopoverHint/> */}
+            <SubredditChoice handleChange={this.handleChange} handleEnter={this.handleEnter} currentSub={this.state.subreddit} />
+            <PopoverHint/>
             <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} subredditClick={this.subredditClick} convertTime={this.convertTime}/>
           </InfiniteScroll>
-
-        </div>
+        </div> */}
+      </>
 
     );
   }
