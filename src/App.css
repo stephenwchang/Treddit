@@ -362,6 +362,15 @@ blockquote p {
   cursor: pointer!important;
 }
 
+.searchContainer {
+  display: flex;
+}
+
+.MuiSvgIcon-root {
+  padding-left: 3px!important;
+  height: 1.3em!important;
+}
+
 
 /* breakpoint modifications */
 @media only screen and (max-width: 600px) {

@@ -8,6 +8,9 @@ import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import List from '@material-ui/core/List';
+import InputBase from '@material-ui/core/InputBase';
+import PopoverHint from './PopoverHint'
+import SearchIcon from '@material-ui/icons/Search';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -19,6 +22,7 @@ import { withStyles } from '@material-ui/core/styles';
 import HoverPanel from './HoverPanel';
 import InfiniteScroll from 'react-infinite-scroller';
 import Posts from './Posts';
+import { Input } from '@material-ui/core';
 
 
 const drawerWidth = 180;
@@ -74,6 +78,19 @@ class ResponsiveDrawer extends React.Component {
     const drawer = (
       <div>
         <div className={classes.toolbar} />
+        <div className='searchContainer'>
+          <SearchIcon style={{flex: 'inline'}} />
+          <InputBase
+                onKeyDown={this.props.handleEnter}
+                placeholder={'r/' + this.props.currentSub}
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+              >
+          </InputBase>
+          <PopoverHint subNotFound={this.props.subNotFound} handleClose={this.props.handleClose}/>
+        </div>
         <Divider />
         <List>
           {['all', 'worldnews', 'funny', 'nba', 'Damnthatsinteresting', 'aww', 'HumansBeingBros', 'memes', 'todayilearned', 'MadeMeSmile', 'science', 'WebDev', 'reactjs'].map((text, index) => (
