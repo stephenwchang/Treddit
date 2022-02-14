@@ -79,7 +79,7 @@ class ResponsiveDrawer extends React.Component {
       <div>
         <div className={classes.toolbar} />
         <div className='searchContainer'>
-          <SearchIcon style={{flex: 'inline'}} />
+          <SearchIcon/>
           <InputBase
                 onKeyDown={this.props.handleEnter}
                 placeholder={'subreddit search'}
@@ -138,7 +138,7 @@ class ResponsiveDrawer extends React.Component {
             <Typography variant="h6" color="inherit" noWrap>
               Tredditor
             </Typography>
-            <Typography style={{ marginLeft: 'auto', }}>
+            <Typography variant="h6" style={{ marginLeft: 'auto', }}>
               r/{this.props.currentSub}
             </Typography>
           </Toolbar>

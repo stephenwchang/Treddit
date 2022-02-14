@@ -371,6 +371,15 @@ blockquote p {
   height: 1.3em!important;
 }
 
+.MuiTypography-body1 {
+  font-size: .9rem!important;
+}
+
+.MuiListItem-root {
+  padding-top: 2px!important;
+  padding-bottom: 2px!important;
+}
+
 
 /* breakpoint modifications */
 @media only screen and (max-width: 600px) {
