@@ -20,7 +20,7 @@ export default function SimplePopover(props) {
 
   return (
     <div>
-      <Typography ref={divRef}></Typography>
+      <div ref={divRef}></div>
       <Popover
         id={id}
         open={props.subNotFound}
