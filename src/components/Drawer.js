@@ -76,8 +76,8 @@ class ResponsiveDrawer extends React.Component {
         <div className={classes.toolbar} />
         <Divider />
         <List>
-          {['all', 'worldnews', 'funny', 'nba', 'Damnthatsinteresting', 'aww', 'HumansBeingBros', 'memes', 'todayilearned'].map((text, index) => (
-            <ListItem button key={text}>
+          {['all', 'worldnews', 'funny', 'nba', 'Damnthatsinteresting', 'aww', 'HumansBeingBros', 'memes', 'todayilearned', 'MadeMeSmile', 'science', 'WebDev', 'reactjs'].map((text, index) => (
+            <ListItem className='sideBarButtons' button key={text}>
               {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
               <ListItemText onClick={() => this.props.subredditClick(text)} primary={text} />
             </ListItem>

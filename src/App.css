@@ -358,6 +358,10 @@ blockquote p {
   cursor: pointer;
 }
 
+.sideBarButtons:hover {
+  cursor: pointer!important;
+}
+
 
 /* breakpoint modifications */
 @media only screen and (max-width: 600px) {
