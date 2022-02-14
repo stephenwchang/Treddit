@@ -82,7 +82,7 @@ class ResponsiveDrawer extends React.Component {
           <SearchIcon style={{flex: 'inline'}} />
           <InputBase
                 onKeyDown={this.props.handleEnter}
-                placeholder={'r/' + this.props.currentSub}
+                placeholder={'subreddit search'}
                 classes={{
                   root: classes.inputRoot,
                   input: classes.inputInput,
