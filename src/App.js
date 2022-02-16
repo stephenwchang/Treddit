@@ -18,30 +18,40 @@ let credentials = {
   clientSecret: '_89r7SRlDhCTtJ0ilQuukSXURkU',
   refreshToken: '7881048-46rszR3pc4SbpMnJzgqsYLu5J6c'
 };
-
-const r = new snoowrap(credentials);
-
 // temporary credentials - to find a way to implement reddit log-in capabilities
 
-
+const r = new snoowrap(credentials);
 
 class App extends Component {
 
   state = {
     posts: [],
+    sortBy: '',
     subreddit: 'all', //subreddit will default to frontpage if not selected by user
     subNotFound: false,
   }
 
   loadPosts = (sub) => {
     let currentSub = this.state.subreddit
-    r.getHot(sub).then(result => {
-      this.setState({ posts: Array.from(result) }) // temporary fix due to returned proxy object from snoowrap
-      console.log(this.state.posts)
-    }, () => {
-      this.setState({subNotFound: true, subreddit: currentSub})
-    })
-  }
+    switch(this.state.sortBy) {
+      case 'New':
+        r.getNew(sub).then(result => {
+          this.setState({ posts: Array.from(result) }) // temporary fix due to returned proxy object from snoowrap
+          console.log(this.state.posts)
+        }, () => {
+          this.setState({subNotFound: true, subreddit: currentSub})
+        })
+        break;
+      default:
+        r.getHot(sub).then(result => {
+          this.setState({ posts: Array.from(result) }) // temporary fix due to returned proxy object from snoowrap
+          console.log(this.state.posts)
+        }, () => {
+          this.setState({subNotFound: true, subreddit: currentSub})
+        })
+      }
+    }
+
 
   handleClick = event => {
     this.setState({ subreddit: event.target.value });

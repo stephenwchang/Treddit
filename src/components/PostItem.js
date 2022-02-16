@@ -104,7 +104,9 @@ export default function PostItem(props) {
                           props.subredditClick(props.subreddit.substring(2))
                         }}
                       >{props.subreddit}</div>
+                      {/* <div className='postScoreText'>{props.score} points</div> */}
                     </div>
+                    <span className='postScoreText'>{props.score} points</span>
                     <span className='numComments'>{props.num_comments} comments</span>
                   </Grid>
                 </Grid>
