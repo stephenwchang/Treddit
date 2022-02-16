@@ -83,6 +83,7 @@ blockquote p {
 
 .ResponsiveDrawer-content-7 {
   padding: 2px!important;
+  overflow: auto!important;
 }
 
 .ResponsiveDrawer-menuButton-4 {
