@@ -129,7 +129,7 @@ class ResponsiveDrawer extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <img className='tredditorLogo' onClick={() => this.props.subredditClick('all')}
+            {/* <img className='tredditorLogo' onClick={() => this.props.subredditClick('all')}
             src={'https://i.redd.it/m1pd3gtxch431.jpg'}
             style={{
                 height:'45px',
@@ -138,14 +138,18 @@ class ResponsiveDrawer extends React.Component {
                 marginRight: '10px',
               }}
             alt={''}
-          />
-            <Typography variant="h6" color="inherit" noWrap>
+          /> */}
+            <Typography onClick={() => this.props.subredditClick('all')} className='tredditorHeading'variant="h6" color="inherit" noWrap>
               Tredditor
             </Typography>
+
+            <Typography variant="h6" style={{ margin: 'auto', }}>
+              r/{this.props.currentSub}
+            </Typography>
             <FormControl className='sortForm'>
-              <InputLabel shrink htmlFor="age-native-label-placeholder">
+              {/* <InputLabel shrink htmlFor="age-native-label-placeholder">
                 Sorted by
-              </InputLabel>
+              </InputLabel> */}
               <NativeSelect
                 value={this.props.sortBy}
                 onChange={this.props.handleSort}
@@ -160,9 +164,6 @@ class ResponsiveDrawer extends React.Component {
               </NativeSelect>
               {/* <FormHelperText>Label + placeholder</FormHelperText> */}
             </FormControl>
-            <Typography variant="h6" style={{ marginLeft: 'auto', }}>
-              r/{this.props.currentSub}
-            </Typography>
           </Toolbar>
         </AppBar>
         {/* <AppBar subredditClick={this.props.subredditClick} handleEnter={this.props.handleEnter} currentSub={this.props.currentSub} subNotFound={this.props.subNotFound} handleClose={this.props.handleClose} /> */}

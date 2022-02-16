@@ -391,10 +391,18 @@ blockquote p {
 .MuiListItem-root {
   padding-top: 2px!important;
   padding-bottom: 2px!important;
+
 }
 
 .sortForm {
 
+}
+
+.MuiNativeSelect-select.MuiNativeSelect-select {
+  font-size: 14px;
+  padding-right: 0!important;
+  padding-left: 0!important;
+  text-align: center;
 }
 
 
@@ -445,6 +453,7 @@ blockquote p {
     inline-size: 80px;
     overflow-wrap: break-word;
   }
+
 
   .commentData {
     /* display: inline; */
