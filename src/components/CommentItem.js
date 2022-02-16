@@ -121,6 +121,7 @@ export default function CommentItem(props) {
             <Grid className={classes.commentDataContainer}item xs>
                 <div className={classes.commentAuthor}>
                   {props.authorName}
+                  <span className='commentScoreText'>{props.score} {(props.score === 1) ? 'point' : 'points'}</span>
                   <span className={classes.createdText}>{props.convertTime(props.created)}</span>
                 </div>
                 <div className={classes.commentText} dangerouslySetInnerHTML={{ __html: props.bodyHtml }}></div>

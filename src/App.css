@@ -301,6 +301,12 @@ blockquote p {
   margin-right: 10px;
 }
 
+.commentScoreText {
+  color: #4fa04f;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
 .numComments {
   color: #808080;
   font-size: 12px;
@@ -453,6 +459,10 @@ blockquote p {
   }
 
   .postScoreText {
+    font-size: 11px;
+  }
+
+  .commentScoreText {
     font-size: 11px;
   }
 
