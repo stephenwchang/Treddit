@@ -91,10 +91,9 @@ class App extends Component {
   }
 
   handleEnter = event => {
-    if (event.key === 'Enter') {
       this.setState({ subreddit: event.target.value });
       this.loadPosts(event.target.value);
-    }
+
   }
 
   handleSort = event => {

@@ -75,6 +75,11 @@ class ResponsiveDrawer extends React.Component {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   };
 
+  handleDrawerClose = () => {
+    this.setState({ mobileOpen: false });
+    console.log('handled drawer close ' + this.state.mobileOpen)
+  };
+
   render() {
     const loader = <div className='loader'>Loading posts...</div>
     const { classes, theme } = this.props;
@@ -85,7 +90,14 @@ class ResponsiveDrawer extends React.Component {
         <div className='searchContainer'>
           <SearchIcon/>
           <InputBase
-                onKeyDown={this.props.handleEnter}
+                onKeyPress={
+                  (event) => {
+                    if (event.key === 'Enter') {
+                      this.props.handleEnter(event);
+                      this.handleDrawerClose();
+                    }
+                  }
+                }
                 placeholder={'subreddit search'}
                 classes={{
                   root: classes.inputRoot,
@@ -100,7 +112,7 @@ class ResponsiveDrawer extends React.Component {
           {['all', 'worldnews', 'funny', 'nba', 'Damnthatsinteresting', 'aww', 'HumansBeingBros', 'memes', 'todayilearned', 'MadeMeSmile', 'science', 'WebDev', 'reactjs'].map((text, index) => (
             <ListItem className='sideBarButtons' button key={text}>
               {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
-              <ListItemText onClick={() => {this.props.subredditClick(text);}} primary={text} />
+              <ListItemText onClick={() => {this.props.subredditClick(text); this.handleDrawerClose();}} primary={text} />
             </ListItem>
           ))}
         </List>
