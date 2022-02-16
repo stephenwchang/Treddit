@@ -170,7 +170,7 @@ class ResponsiveDrawer extends React.Component {
                 <option value='Hot'>Hot</option>
                 <option value='New'>New</option>
                 <option value='Top'>Top</option>
-                <option value='Best'>Best</option>
+                {/* <option value='Best'>Best</option> */}
                 <option value='Rising'>Rising</option>
                 <option vale='Controversial'>Controversial</option>
               </NativeSelect>
