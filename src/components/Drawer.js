@@ -23,6 +23,11 @@ import HoverPanel from './HoverPanel';
 import InfiniteScroll from 'react-infinite-scroller';
 import Posts from './Posts';
 import { Input } from '@material-ui/core';
+import FormControl from '@material-ui/core/FormControl';
+import NativeSelect from '@material-ui/core/NativeSelect';
+import InputLabel from '@material-ui/core/InputLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+
 
 
 const drawerWidth = 180;
@@ -95,7 +100,7 @@ class ResponsiveDrawer extends React.Component {
           {['all', 'worldnews', 'funny', 'nba', 'Damnthatsinteresting', 'aww', 'HumansBeingBros', 'memes', 'todayilearned', 'MadeMeSmile', 'science', 'WebDev', 'reactjs'].map((text, index) => (
             <ListItem className='sideBarButtons' button key={text}>
               {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
-              <ListItemText onClick={() => this.props.subredditClick(text)} primary={text} />
+              <ListItemText onClick={() => {this.props.subredditClick(text);}} primary={text} />
             </ListItem>
           ))}
         </List>
@@ -137,6 +142,24 @@ class ResponsiveDrawer extends React.Component {
             <Typography variant="h6" color="inherit" noWrap>
               Tredditor
             </Typography>
+            <FormControl className='sortForm'>
+              <InputLabel shrink htmlFor="age-native-label-placeholder">
+                Sorted by
+              </InputLabel>
+              <NativeSelect
+                value={this.props.sortBy}
+                onChange={this.props.handleSort}
+                // input={<Input name="age" id="age-native-label-placeholder" />}
+              >
+                <option value='Hot'>Hot</option>
+                <option value='New'>New</option>
+                <option value='Top'>Top</option>
+                <option value='Best'>Best</option>
+                <option value='Rising'>Rising</option>
+                <option vale='Controversial'>Controversial</option>
+              </NativeSelect>
+              {/* <FormHelperText>Label + placeholder</FormHelperText> */}
+            </FormControl>
             <Typography variant="h6" style={{ marginLeft: 'auto', }}>
               r/{this.props.currentSub}
             </Typography>

@@ -106,7 +106,7 @@ export default function PostItem(props) {
                       >{props.subreddit}</div>
                       {/* <div className='postScoreText'>{props.score} points</div> */}
                     </div>
-                    <span className='postScoreText'>{props.score} points</span>
+                    <span className='postScoreText'>{props.score} {(props.score === 1) ? 'point' : 'points'}</span>
                     <span className='numComments'>{props.num_comments} comments</span>
                   </Grid>
                 </Grid>
