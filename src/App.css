@@ -98,7 +98,7 @@ blockquote p {
 
 .postTitleURL {
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 400;
 }
 
@@ -441,7 +441,7 @@ blockquote p {
   }
 
   .postTitleURL {
-    font-size: 1.1rem;
+    font-size: .9rem;
   }
 
   .posts {
