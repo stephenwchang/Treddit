@@ -114,10 +114,11 @@ class App extends Component {
   }
 
   convertTime = time => {
-    let dateTime = moment.unix(time).format("MM-DD-YYYY HH:mm:ss")
-    let timeAgo = moment(dateTime).fromNow()
+    let dateTime = moment.unix(time).format("MM/DD/yyyy HH:mm:ss");
+    let timeAgo = moment(dateTime).fromNow();
     return timeAgo
   }
+
 
   loadMore = () => {
     console.log('infinite scroll activated')
