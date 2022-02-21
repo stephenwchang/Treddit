@@ -170,21 +170,11 @@ class App extends Component {
 
    }
 
-
-  // renderComments = (id) => {
-  //     // r.getSubmission(id).comments.then(result => {
-  //     //   this.ssetState({ comments: result })
-  //       console.log(this.state.comments)
-  //     // });
-  // }
-
-
   componentDidMount = () => {
     this.loadPosts(this.state.subreddit);
   }
 
   render() {
-    // const loader = <div className='loader'>Loading posts...</div>
     return (
       <>
         <Drawer
@@ -201,20 +191,6 @@ class App extends Component {
         handleSort={this.handleSort}
         sortBy={this.state.sortBy}/>
 
-        {/* <div className='posts'>
-          <HoverPanel currentSub={this.state.subreddit}/>
-          <AppBar subredditClick={this.subredditClick} handleEnter={this.handleEnter} currentSub={this.state.subreddit} subNotFound={this.state.subNotFound} handleClose={this.handleClose}/>
-          <InfiniteScroll
-            pageStart={0}
-            loadMore={this.loadMore}
-            hasMore={true}
-            loader={loader}
-          >
-            <SubredditChoice handleChange={this.handleChange} handleEnter={this.handleEnter} currentSub={this.state.subreddit} />
-            <PopoverHint/>
-            <Posts posts={this.state.posts} comments={this.state.comments} renderComments={this.renderComments} subredditClick={this.subredditClick} convertTime={this.convertTime}/>
-          </InfiniteScroll>
-        </div> */}
       </>
 
     );
