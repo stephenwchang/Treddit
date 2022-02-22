@@ -19,6 +19,7 @@ export class Posts extends Component {
           created={posts.created}
           subredditClick={this.props.subredditClick}
           convertTime={this.props.convertTime}
+          postHint={posts.post_hint}
         />
       ));
   }

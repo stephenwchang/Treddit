@@ -116,6 +116,7 @@ export default function PostItem(props) {
             <Typography component={'span'} variant={'body2'}>
             <div className={classes.selfTextContainer}>
               <SelfText className={classes.selfText} selftext={props.selftext}/>
+              {props.postHint === 'image' ? <img className='postImage' src={props.url}></img> : null}
             </div>
             <Comments id={props.id} convertTime={props.convertTime}/>
             </Typography>
