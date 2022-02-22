@@ -109,7 +109,7 @@ class ResponsiveDrawer extends React.Component {
         </div>
         <Divider />
         <List>
-          {['all', 'worldnews', 'funny', 'nba', 'Damnthatsinteresting', 'aww', 'HumansBeingBros', 'memes', 'todayilearned', 'MadeMeSmile', 'science', 'WebDev', 'reactjs'].map((text, index) => (
+          {['all', 'pics', 'worldnews', 'funny', 'nba', 'Damnthatsinteresting', 'aww', 'HumansBeingBros', 'memes', 'todayilearned', 'MadeMeSmile', 'science', 'WebDev', 'reactjs'].map((text, index) => (
             <ListItem className='sideBarButtons' button key={text}>
               {/* <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon> */}
               <ListItemText onClick={() => {this.props.subredditClick(text); this.handleDrawerClose();}} primary={text} />

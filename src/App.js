@@ -27,7 +27,7 @@ class App extends Component {
   state = {
     posts: [],
     sortBy: 'Hot',
-    subreddit: 'all', //subreddit will default to frontpage if not selected by user
+    subreddit: 'memes', //subreddit will default to frontpage if not selected by user
     subNotFound: false,
   }
 
