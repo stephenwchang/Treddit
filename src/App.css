@@ -396,6 +396,12 @@ blockquote p {
 
 .postImage {
   max-width: 100%;
+  border-radius: 6px;
+  max-height: 30rem;
+}
+
+.postImageContainer {
+  display: flex;
 }
 
 .MuiNativeSelect-select.MuiNativeSelect-select {
@@ -486,6 +492,10 @@ blockquote p {
   .MuiSnackbar-root {
     left: 50%!important;
     right: 50%!important;
+  }
+
+  .postImage {
+    margin: auto;
   }
 }
 
